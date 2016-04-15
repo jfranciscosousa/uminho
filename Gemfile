@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#Annotate ruby model with table atributes (from schema.rb)
+gem 'annotate'
+#Implement multi table inheritance
+gem 'active_record-acts_as'
 #Make the whole website beautiful!
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 #Make form creation very very easy!!

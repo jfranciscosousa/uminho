@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: shows
+#
+#  id       :integer          not null, primary key
+#  cast     :text
+#  seasons  :integer
+#  duration :integer
+#  episodes :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cast: MyText
+  seasons: 1
+  duration: 1
+  episodes: 1
+
+two:
+  cast: MyText
+  seasons: 1
+  duration: 1
+  episodes: 1

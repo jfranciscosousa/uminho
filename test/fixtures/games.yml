@@ -1,0 +1,16 @@
+# == Schema Information
+#
+# Table name: games
+#
+#  id       :integer          not null, primary key
+#  platform :string
+#  studio   :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  platform: MyString
+
+two:
+  platform: MyString

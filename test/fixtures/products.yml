@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  description  :text
+#  release_date :date
+#  rating       :string
+#  score        :integer
+#  importance   :integer
+#  moderator_id :integer
+#  actable_id   :integer
+#  actable_type :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  release_date: 2016-04-15
+
+two:
+  name: MyString
+  description: MyText
+  release_date: 2016-04-15
