@@ -20,4 +20,10 @@ class Product < ActiveRecord::Base
   actable
   has_many :reviews
   belongs_to :moderator
+
+  before_save do
+    if self.release_date.class == Hash
+      self.release_date = Date.new(*self.release_date.values)
+    end
+  end
 end

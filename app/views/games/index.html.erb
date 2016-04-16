@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%=Game.human_attribute_name(:name)%></th>
+        <th><%=Game.human_attribute_name(:release_date)%></th>
+        <th><%=Game.human_attribute_name(:description)%></th>
+        <th><%=Game.human_attribute_name(:importance)%></th>
+        <th><%=Game.human_attribute_name(:rating)%></th>
+        <th><%=Game.human_attribute_name(:platform)%></th>
+        <th><%=Game.human_attribute_name(:studio)%></th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for game in @games %>
+      <tr>
+        <td><%=game.name%></td>
+        <td><%=game.description%></td>
+        <td><%=game.release_date%></td>
+        <td><%=game.rating%></td>
+        <td><%=game.importance%></td>
+        <td><%=game.platform%></td>
+        <td><%=game.studio%></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_game_path(game), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          game_path(game), :method => :delete,
+          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+          :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to('New game', new_game_path()) %>
+</div>
