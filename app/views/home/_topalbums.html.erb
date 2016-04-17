@@ -1,0 +1,15 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">Top Music</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for a in @albums %>
+        <tr>
+            <td><%= a.name %></td>
+            <td>100</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

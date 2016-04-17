@@ -1,0 +1,15 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">Top Games</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for g in @games %>
+        <tr>
+            <td><%= link_to(g.name,g) %></td>
+            <td>100</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

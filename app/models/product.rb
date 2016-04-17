@@ -22,8 +22,12 @@ class Product < ActiveRecord::Base
   belongs_to :moderator
 
   before_save do
-    if self.release_date.class == Hash
-      self.release_date = Date.new(*self.release_date.values)
+    if release_date.class == Hash
+      self.release_date = Date.new(*release_date.values)
     end
+  end
+
+  def pretty_date
+    release_date.strftime('%B %-d, %Y')
   end
 end

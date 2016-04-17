@@ -1,7 +1,7 @@
 <%= simple_form_for(@game, class: 'form-horizontal' )  do |f| %>
 <%= f.input :name %>
 <%= f.input :description %>
-<%= f.input :release_date,  as: :date %>
+<%= f.input :release_date,  as: :string, input_html: {type: :date}%>
 <%= f.input :rating %>
 <%= f.input :importance %>
 <%= f.input :platform %>
