@@ -20,4 +20,14 @@ class Product < ActiveRecord::Base
   actable
   has_many :reviews
   belongs_to :moderator
+
+  before_save do
+    if release_date.class == Hash
+      self.release_date = Date.new(*release_date.values)
+    end
+  end
+
+  def pretty_date
+    release_date.strftime('%B %-d, %Y')
+  end
 end

@@ -1,0 +1,15 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">Top Movies</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for m in @movies %>
+        <tr>
+            <td><%= m.name %></td>
+            <td>100</td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

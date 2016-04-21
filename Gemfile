@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
+#Devise forms with bootstrap
+gem 'devise-bootstrap-views'
 #Annotate ruby model with table atributes (from schema.rb)
 gem 'annotate'
 #Implement multi table inheritance
 gem 'active_record-acts_as'
 #Make the whole website beautiful!
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 #Make form creation very very easy!!
 gem 'simple_form'
 #Authentication gem, provide methods to register, login and logout users
