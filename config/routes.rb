@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :games
+  resources :albums
+
   root 'home#index'
 
   #get "games/:id" => "games#show", as: :game
