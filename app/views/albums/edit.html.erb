@@ -1,0 +1,13 @@
+<%= simple_form_for(@album, class: 'form-horizontal' )  do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :release_date,  as: :string, input_html: {type: :date}%>
+    <%= f.input :rating %>
+    <%= f.input :importance %>
+    <%= f.input :duration %>
+    <%= f.input :artist %>
+    <%= f.input :producer %>
+    <%= f.input :studio %>
+    <%= f.input :features %>
+    <%= f.button :submit %>
+<% end %>
