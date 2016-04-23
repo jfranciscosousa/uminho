@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :games
   resources :albums
+  resources :movies
 
   root 'home#index'
 
