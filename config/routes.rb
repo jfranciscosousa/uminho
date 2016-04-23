@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :games, :movies
+  resources :games
+  resources :albums
+  resources :movies
+
   root 'home#index'
 
   #get "games/:id" => "games#show", as: :game
