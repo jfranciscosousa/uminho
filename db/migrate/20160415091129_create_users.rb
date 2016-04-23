@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date "birth_date"
       t.string "gender"
       t.string "country"
+      t.string "role"
       t.timestamps null: false
     end
   end

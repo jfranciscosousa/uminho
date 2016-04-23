@@ -1,2 +1,45 @@
-<p> Name: <%= @game.name%> </p>
-<p> Description: <%= @game.description%> </p>
+<div>
+  <p>
+    Name:
+    <%= @game.name%>
+  </p>
+  <p>
+    Description:
+    <%= @game.description%>
+  </p>
+</div>
+<div class="row" style="padding-top: 50px">
+  <div class="col-md-6">
+    <% for review in @game.reviews %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="pull-left">
+            <p><%= review.user.email %></p>
+          </div>
+          <div class="pull-right">
+            <p class="text-right"><%= review.score %></p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+          <%= review.text%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <% if !can? :create, Review %>
+      <%= simple_form_for([@game.acting_as,Review.new], class: 'form-horizontal' )  do |f| %>
+        <%= f.input :score, disabled: true %>
+        <%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
+        <%= f.button :submit, disabled: true %>
+      <% end %>
+    <% else %>
+      <%= simple_form_for([@game.acting_as,Review.new], class: 'form-horizontal' )  do |f| %>
+        <%= f.input :score, disabled: true %>
+        <%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
+        <%= f.button :submit, disabled: true %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

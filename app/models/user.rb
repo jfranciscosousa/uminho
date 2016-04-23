@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :products, :through => :reviews
+  before_save :default_values
+
+  def default_values
+    self.role ||= 'user'
+  end
 end

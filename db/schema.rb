@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 20160415185232) do
     t.string "studio"
   end
 
-  create_table "moderators", force: :cascade do |t|
-    t.string   "name"
-    t.boolean  "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "movies", force: :cascade do |t|
     t.text    "cast"
     t.string  "director"
@@ -48,7 +41,6 @@ ActiveRecord::Schema.define(version: 20160415185232) do
     t.string   "rating"
     t.integer  "score"
     t.integer  "importance"
-    t.integer  "moderator_id"
     t.integer  "actable_id"
     t.string   "actable_type"
     t.datetime "created_at",   null: false
@@ -78,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160415185232) do
     t.date     "birth_date"
     t.string   "gender"
     t.string   "country"
+    t.string   "role"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :albums
   resources :movies
 
+  resources :products, only: [] do
+    resources :reviews
+  end
+
   root 'home#index'
 
   #get "games/:id" => "games#show", as: :game

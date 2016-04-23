@@ -1,8 +1,16 @@
 class HomeController < ApplicationController
   def index
-    @games = Game.all
-    @movies = Movie.all
-    @shows = Show.all
-    @albums = Album.all
+    if user_signed_in?
+      if current_user.role == 'admin'
+        render 'admin-home'
+      elsif current_user.role == 'moderator'
+        render 'moderator-home'
+      end
+    else
+      @games = Game.all
+      @movies = Movie.all
+      @shows = Show.all
+      @albums = Album.all
+    end
   end
 end
