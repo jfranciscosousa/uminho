@@ -1,0 +1,13 @@
+<% if !can? :create, Review %>
+  <%= simple_form_for([@game.acting_as,Review.new], class: 'form-horizontal' )  do |f| %>
+    <%= f.input :score, disabled: true %>
+    <%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
+    <%= f.button :submit, disabled: true %>
+  <% end %>
+<% else %>
+  <%= simple_form_for([@game.acting_as,Review.new], class: 'form-horizontal' )  do |f| %>
+    <%= f.input :score, disabled: true %>
+    <%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
+    <%= f.button :submit, disabled: true %>
+  <% end %>
+<% end %>
