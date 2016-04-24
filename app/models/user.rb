@@ -18,17 +18,21 @@
 #
 
 class User < ActiveRecord::Base
+  scope :male, -> { where(gender: 'Male') }
+  scope :female, -> { where(gender: 'Female') }
+  scope :other, -> { where(gender: 'Other') }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #associations
+  # associations
   has_many :reviews
   has_many :products, through: :reviews
 
-  #validations
+  # validations
   validates :gender, inclusion: { in: %w(Male Female Other), message: 'Invalid gender.' }
 
-  #default values
+  # default values
   before_save :default_values
 
   def default_values

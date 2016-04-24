@@ -10,8 +10,8 @@
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
         <%= f.input :password_confirmation, required: false %>
         <%= f.input :birth_date, required: true%>
-        <%= f.input :gender,:collection => ['Female', 'Male', 'Other'] %>
-        <%= f.input :country, priority: [ "Portugal" ] %>
+        <%= f.input :gender , :collection => ['Male', 'Female', 'Other'], required: true%>
+        <%= f.input :country, priority: [ "Portugal" ], required: true%>
         <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
     </div>
     <div class="form-actions">
