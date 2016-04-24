@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :games
   resources :albums
   resources :movies
 
-  resources :products, only: [] do
+  resources :products, only: [:index] do
     resources :reviews
   end
 
