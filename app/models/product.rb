@@ -19,6 +19,19 @@ class Product < ActiveRecord::Base
   actable
   has_many :reviews
 
+  def score
+    numreviews = reviews.count
+    if  numreviews == 0
+      return 0
+    else
+      total = 0
+      for review in reviews
+        total += review.score
+      end
+      total / numreviews
+    end
+  end
+
   before_save do
     if release_date.class == Hash
       self.release_date = Date.new(*release_date.values)
