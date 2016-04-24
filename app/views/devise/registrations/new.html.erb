@@ -7,6 +7,7 @@
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
         <%= f.input :birth_date, required: true%>
+        <%= f.input :gender,:collection => ['Female', 'Male', 'Other'] %>
         <%= f.input :country, priority: [ "Portugal" ] %>
     </div>
     <div class="form-actions">

@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   has_many :products, through: :reviews
 
   #validations
-  validates :gender, exclusion: { in: %w(male female other), message: 'Invalid gender.' }
+  validates :gender, inclusion: { in: %w(Male Female Other), message: 'Invalid gender.' }
 
   #default values
   before_save :default_values
