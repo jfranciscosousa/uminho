@@ -17,6 +17,10 @@ class ReviewsController < ApplicationController
   load_and_authorize_resource
   before_filter :set_product
 
+  def index
+    @reviews = @product.reviews
+  end
+
   def new
     @review = Review.new
   end
@@ -28,10 +32,13 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { flash[:notice] = 'Review was successfully created.' && redirect_to(request.referrer) }
+        format.html do
+          flash[:notice] = 'Review was successfully created.'
+          redirect_to(action: 'index')
+        end
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { render :new }
+        format.html { render }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end

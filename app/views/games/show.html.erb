@@ -12,7 +12,7 @@
     <div class="col-md-6">
         <div class="panel panel-default" style="padding: 25px">
             <div style="padding: 10px">
-                <%= button_to "Write review", new_product_review_path(@game.acting_as) %>
+                <%= link_to "Write review", new_product_review_path(@game.acting_as) %>
             </div>
             <% for review in @game.reviews %>
                 <div class="panel panel-default">
