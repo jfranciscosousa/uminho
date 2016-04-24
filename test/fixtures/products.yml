@@ -9,7 +9,6 @@
 #  rating       :string
 #  score        :integer
 #  importance   :integer
-#  moderator_id :integer
 #  actable_id   :integer
 #  actable_type :string
 #  created_at   :datetime         not null

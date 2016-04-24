@@ -6,11 +6,10 @@ class HomeController < ApplicationController
       elsif current_user.role == 'moderator'
         render 'moderator-home'
       end
-    else
-      @games = Game.all
-      @movies = Movie.all
-      @shows = Show.all
-      @albums = Album.all
     end
+    @games = Game.all
+    @movies = Movie.all
+    @shows = Show.all
+    @albums = Album.all
   end
 end

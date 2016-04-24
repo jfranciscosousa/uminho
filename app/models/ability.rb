@@ -7,7 +7,7 @@ class Ability
     can :read, :all
 
     if user.role == 'user'
-      can :manage, Review
+      can :create, Review
     elsif user.role == 'admin'
       can :manage, :all
     elsif user.role == 'moderator'

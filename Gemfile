@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'country_select'
 #Devise forms with bootstrap
 gem 'devise-bootstrap-views'
 #Annotate ruby model with table atributes (from schema.rb)

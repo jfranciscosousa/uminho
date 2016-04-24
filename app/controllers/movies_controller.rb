@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id         :integer          not null, primary key
+#  cast       :text
+#  director   :string
+#  studio     :string
+#  duration   :integer
+#  product_id :integer
+#
+
 class MoviesController < ApplicationController
   load_and_authorize_resource
   before_action :set_movie, only: [:show, :edit, :update, :destroy]

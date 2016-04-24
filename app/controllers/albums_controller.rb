@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: albums
+#
+#  id       :integer          not null, primary key
+#  duration :integer
+#  artist   :string
+#  producer :string
+#  studio   :string
+#  features :string
+#
+
 class AlbumsController < ApplicationController
   load_and_authorize_resource
   before_action :set_album, only: [:show, :edit, :update, :destroy]

@@ -14,3 +14,11 @@
  *= require_self
  *= bootstrap_and_overrides
  */
+
+body {
+    padding-top: 50px;
+}
+
+div.container a.input-group-btn {
+    font-size: 14px;
+}
