@@ -63,9 +63,9 @@ class ShowsController < ApplicationController
                                  :release_date,
                                  :rating,
                                  :importance,
-                                 :cast
-                                 :seasons
-                                 :duration
+                                 :cast,
+                                 :seasons,
+                                 :duration,
                                  :episodes)
   end
 end

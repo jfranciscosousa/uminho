@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :games
   resources :albums
   resources :movies
+  resources :shows
 
   root 'home#index'
 
