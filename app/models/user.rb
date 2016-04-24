@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
   def default_values
     self.role ||= 'user'
   end
+
+  def can_review?(product)
+    !product.in?(self.products)
+  end
 end

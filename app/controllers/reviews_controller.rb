@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
         end
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { render }
+        format.html { render :new}
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
