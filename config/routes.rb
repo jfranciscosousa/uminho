@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :games
   resources :albums
   resources :movies
+  resources :shows
 
   resources :products, only: [:index] do
     resources :reviews
