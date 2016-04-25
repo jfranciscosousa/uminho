@@ -1,17 +1,21 @@
 # == Schema Information
 #
-# Table name: moderators
+# Table name: reviews
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  admin      :boolean
+#  text       :text
+#  score      :integer
+#  likes      :integer
+#  dislikes   :integer
+#  user_id    :integer
+#  product_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class ModeratorTest < ActiveSupport::TestCase
+class ReviewsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

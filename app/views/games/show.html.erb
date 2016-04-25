@@ -1,2 +1,35 @@
-<p> Name: <%= @game.name%> </p>
-<p> Description: <%= @game.description%> </p>
+<div>
+    <p>
+        Name:
+    <%= @game.name%>
+    </p>
+    <p>
+        Description:
+    <%= @game.description%>
+    </p>
+</div>
+<div class="row" style="padding-top: 50px">
+    <div class="col-md-6">
+        <div class="panel panel-default" style="padding: 25px">
+            <div style="padding: 10px">
+                <%= link_to "Write review", new_product_review_path(@game.acting_as) %>
+            </div>
+            <% for review in @game.reviews %>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <p><%= review.user.email %></p>
+                        </div>
+                        <div class="pull-right">
+                            <p class="text-right"><%= review.score %></p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-body">
+                        <%= review.text%>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

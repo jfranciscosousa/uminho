@@ -1,15 +1,17 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th colspan="2">Top TV Shows</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for s in @shows %>
-        <tr>
-            <td><%= s.name %></td>
-            <td>100</td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class="panel panel-default">
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2">Top TV Shows</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for s in @shows %>
+                <tr>
+                    <td><%= s.name %></td>
+                    <td>100</td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

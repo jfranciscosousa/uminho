@@ -1,4 +1,14 @@
+# == Schema Information
+#
+# Table name: games
+#
+#  id       :integer          not null, primary key
+#  platform :string
+#  studio   :string
+#
+
 class GamesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   def index

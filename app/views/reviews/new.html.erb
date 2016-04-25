@@ -1,0 +1,14 @@
+<% if can? :create, Review %>
+    <%= simple_form_for([@product,@review], class: 'form-horizontal' )  do |f| %>
+        <%= render 'shared/errors', object: f.object %>
+        <%= f.input :score %>
+        <%= f.input :text %>
+        <%= f.button :submit %>
+    <% end %>
+<% else %>
+    <%= simple_form_for([@product,@review], class: 'form-horizontal' )  do |f| %>
+        <%= f.input :score, disabled: true %>
+        <%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
+        <%= f.button :submit, disabled: true %>
+    <% end %>
+<% end %>
