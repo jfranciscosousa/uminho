@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'devise'
 #Authorization gem, define what each kind of user can do
 gem 'cancancan', '~> 1.10'
+gem "font-awesome-rails"
 #Improve error treatment
 group :development do
   gem "better_errors"
