@@ -1,35 +1,43 @@
 <div>
-    <p>
-        Name:
+  <p>
+    Name:
     <%= @game.name%>
-    </p>
-    <p>
-        Description:
+  </p>
+  <p>
+    Description:
     <%= @game.description%>
-    </p>
+  </p>
 </div>
 <div class="row" style="padding-top: 50px">
-    <div class="col-md-6">
-        <div class="panel panel-default" style="padding: 25px">
-            <div style="padding: 10px">
-                <%= link_to "Write review", new_product_review_path(@game.acting_as) %>
+  <div class="col-md-6">
+    <div class="panel panel-default" style="padding: 25px">
+      <div style="padding: 10px">
+        <% if  can? :create, Review %>
+          <%= link_to_if "Write Review", new_product_review_path(@game.acting_as), class: "btn btn-default" %>
+        <% else %>
+          <div title="You must log in to submit reviews!" data-toggle="data-toggle">
+            <%= link_to "Write Review", new_product_review_path(@game.acting_as),
+            class: "btn btn-default disabled"
+            %>
+          </div>
+        <% end %>
+      </div>
+      <% for review in @game.reviews %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="pull-left">
+              <p><%= review.user.email %></p>
             </div>
-            <% for review in @game.reviews %>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="pull-left">
-                            <p><%= review.user.email %></p>
-                        </div>
-                        <div class="pull-right">
-                            <p class="text-right"><%= review.score %></p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="panel-body">
-                        <%= review.text%>
-                    </div>
-                </div>
-            <% end %>
+            <div class="pull-right">
+              <p class="text-right"><%= review.score %></p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <%= review.text%>
+          </div>
         </div>
+      <% end %>
     </div>
+  </div>
 </div>
