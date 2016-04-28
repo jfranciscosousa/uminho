@@ -35,6 +35,9 @@ Game.create(name:"The Witcher 3: Wild Hunt", description:"The Witcher 3: Wild Hu
 Game.create(name:"Fifa 16", description:"FIFA 16 is an association football simulation video game developed by EA Canada and published by EA Sports for Microsoft Windows, Xbox One, PlayStation 4.",
       release_date: Date.new(2015,9,24), platform: "PS4, Xbox One, Microsoft Windows", studio:"EA Sports")
 
+
+
+
 #### movies
 
 Movie.create(name:"2001: Space Odissey", description:"Humanity finds a mysterious, obviously artificial object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
@@ -52,3 +55,22 @@ Movie.create(name:"The AristoCats", description:"With the help of a smooth talki
 Movie.create(name:"The Little Mermaid", description:"A mermaid princess makes a Faustian bargain with an unscrupulous sea-witch in order to meet a human prince on land.",
       release_date: Date.new(1990,12,21), cast:"Rene Auberjonois, Christopher Daniel Barnes, Jodi Benson, Pat Carrol, Paddi Edwards, Buddy Hackett",
       director: "Ron Clements, John Musker", studio:"Walt Disney")
+
+
+### tv shows
+
+Show.create(name:"Game of Thrones", description:"While a civil war brews between several noble families in Westeros, the children of the former rulers of the land attempt to rise up to power. Meanwhile a forgotten race, bent on destruction, return after thousands of years in the North.",
+      release_date: Date.new(2011,4,11), cast:"Peter dinklage, Lena Headey, Emilia Clarke, Kit Harrington, Sophie Turner, Maisie Williams, Nikolaj Coster-Waldau, Alfie Allen, 	Aidan Gillen",
+      seasons: 6, duration: 56, episodes:52)
+
+Show.create(name:"Silicon Valley", description:"In the high-tech gold rush of modern Silicon Valley, the people most qualified to succeed are the least capable of handling success. A comedy partially inspired by Mike Judge's own experiences as a Silicon Valley engineer in the late 1980s.",
+      release_date: Date.new(2015,4,6), cast:"Thomas Middleditch, T.J. Miller, Martin Starr, Kumail Nanjiani, Amanda Crew, Zach Woods",
+      seasons: 3, duration: 28, episodes:19)
+
+Show.create(name:"Breaking Bad", description:"A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine, with his former student, in order to secure his family's financial future.",
+      release_date: Date.new(2008,1,20), cast:"Bryan Cranston, Anna Gunn, Aaron Paul, Dean Norris, Betsy Brandt, RJ Mitte",
+      seasons: 5, duration: 49, episodes: 62)
+
+Show.create(name:"Fargo", description:"Various chronicles of deception, intrigue and murder in and around frozen Minnesota. Yet all of these tales mysteriously lead back one way or another to Fargo, North Dakota.",
+      release_date: Date.new(2014, 4, 15), cast:"Allison Tolman, Collin Hanks, Martin Freeman, Billy Bob Thompson, Kirsten Dunst, Patrick Wilson, Jesse Piemons",
+      seasons: 2, duration: 53, episodes: 20)
