@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'enum_help'
+gem 'acts_as_votable'
 gem 'country_select'
 #Devise forms with bootstrap
 gem 'devise-bootstrap-views'

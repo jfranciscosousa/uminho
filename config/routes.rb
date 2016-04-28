@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  post "reviews/:id/like" => "reviews#like", as: 'like_review'
+  post "reviews/:id/dislike" => "reviews#dislike", as: 'dislike_review'
+
   root 'home#index'
 
   #get "games/:id" => "games#show", as: :game
