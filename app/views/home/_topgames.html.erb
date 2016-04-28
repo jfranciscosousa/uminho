@@ -1,17 +1,16 @@
-<div class="panel panel-default">
-    <table class="table">
-        <thead>
-            <tr>
-                <th colspan="2">Top Games</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for g in @games %>
-                <tr>
-                    <td><%= link_to(g.name,g) %></td>
-                    <td>100</td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-</div>
+<div class="panel panel-black">
+                <div class="panel-heading">
+                  <div class="category-title">
+                    <h3 class="panel-title">
+                        Top Games</h3>
+                      </div>
+                </div>
+    <ul class="list-group">
+        <% for g in @games %>
+        <li class="list-group-item">
+            <%=g.name%>
+            <%=g.score%>
+        </li>
+        <% end%>
+    </ul>
+  </div>

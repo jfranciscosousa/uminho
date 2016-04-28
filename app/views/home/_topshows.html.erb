@@ -1,17 +1,16 @@
-<div class="panel panel-default">
-    <table class="table">
-        <thead>
-            <tr>
-                <th colspan="2">Top TV Shows</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for s in @shows %>
-                <tr>
-                    <td><%= s.name %></td>
-                    <td>100</td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-</div>
+<div class="panel panel-black">
+                <div class="panel-heading">
+                  <div class="category-title">
+                    <h3 class="panel-title">
+                        Top TV Shows</h3>
+                      </div>
+                </div>
+    <ul class="list-group">
+        <% for s in @shows %>
+        <li class="list-group-item">
+            <%=s.name %>
+            <%=s.score%>
+        </li>
+        <% end%>
+    </ul>
+  </div>

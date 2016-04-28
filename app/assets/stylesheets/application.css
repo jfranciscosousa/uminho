@@ -40,6 +40,17 @@
   margin-right:5%;
 }
 
+.panel-black
+{
+    color: #292c2f;
+    background-color: #292c2f;
+    border-color: #292c2f;
+}
+
+.category-title {
+  color: #fff;
+}
+
 .footer-distributed{
   bottom:0;
 	background-color: #292c2f;
