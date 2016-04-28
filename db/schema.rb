@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415185232) do
+ActiveRecord::Schema.define(version: 20160428151531) do
 
   create_table "albums", force: :cascade do |t|
-    t.integer "duration"
-    t.string  "artist"
-    t.string  "producer"
-    t.string  "studio"
-    t.string  "features"
+    t.string "duration"
+    t.string "artist"
+    t.string "producer"
+    t.string "studio"
+    t.string "features"
   end
 
   create_table "games", force: :cascade do |t|
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20160415185232) do
     t.string  "director"
     t.string  "studio"
     t.integer "duration"
-    t.integer "product_id"
   end
 
   create_table "products", force: :cascade do |t|
