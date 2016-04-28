@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428143150) do
+ActiveRecord::Schema.define(version: 20160428151531) do
 
   create_table "albums", force: :cascade do |t|
     t.string "duration"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20160428143150) do
     t.string  "director"
     t.string  "studio"
     t.integer "duration"
-    t.integer "product_id"
   end
 
   create_table "products", force: :cascade do |t|
