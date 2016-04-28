@@ -8,8 +8,18 @@
     <ul class="list-group">
         <% for g in @games %>
         <li class="list-group-item">
-            <%=g.name%>
-            <%=g.score%>
+          <div class="row">
+              <div class="col-sm-8">
+                <strong><%= g.name %></strong>
+                <br />
+                <small><%=g.platform%></small>
+              </div>
+              <div class="col-sm-4">
+                <div class="text-right">
+                <%= g.score %>
+              </div>
+              </div>
+          </div>
         </li>
         <% end%>
     </ul>

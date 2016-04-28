@@ -8,8 +8,18 @@
     <ul class="list-group">
         <% for s in @shows %>
         <li class="list-group-item">
-            <%=s.name %>
-            <%=s.score%>
+          <div class="row">
+              <div class="col-sm-8">
+                <strong><%= s.name %></strong>
+                <br />
+                <small><%=s.episodes%> episodes</small>
+              </div>
+              <div class="col-sm-4">
+                <div class="text-right">
+                <%= s.score %>
+              </div>
+              </div>
+          </div>
         </li>
         <% end%>
     </ul>

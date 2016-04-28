@@ -8,9 +8,18 @@
     <ul class="list-group">
         <% for a in @albums %>
         <li class="list-group-item">
-            <%=a.name %>
-            <%=a.score%>
-        </li>
+          <div class="row">
+              <div class="col-sm-8">
+                <strong><%= a.name %></strong>
+                <br />
+                <small><%=a.artist%></small>
+              </div>
+              <div class="col-sm-4">
+                <div class="text-right">
+                <%= a.score %>
+              </div>
+              </div>
+          </div>
         <% end%>
     </ul>
   </div>

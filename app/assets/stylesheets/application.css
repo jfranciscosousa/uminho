@@ -16,6 +16,8 @@
  *= require font-awesome
  */
 
+ /* Main structure */
+
  html, body {
    padding: 0;
    margin: 0;
@@ -35,6 +37,8 @@
   padding-bottom: 15%;
 }
 
+/*Minor classes*/
+
 .navbar-frame {
   margin-left:10%;
   margin-right:5%;
@@ -50,6 +54,11 @@
 .category-title {
   color: #fff;
 }
+
+.text-right {
+  text-align: right;
+}
+
 
 .footer-distributed{
   bottom:0;
