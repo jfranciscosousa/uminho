@@ -37,6 +37,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
 }
 
+.carousel {
+  margin-bottom:5%;
+}
+
+.text-center {
+  text-align: center;
+}
 
 .maincontent {
   margin-left:15%;
