@@ -75,9 +75,20 @@ border-radius: 10px 10px 10px 10px;
 
 /*Minor classes*/
 
-.navbar-frame {
+.navbar-logo-frame {
   margin-left:10%;
-  margin-right:5%;
+}
+
+.navbar-search-frame{
+  margin-left:50%;
+}
+
+.categories-frame {
+  margin-left:20%;
+}
+
+.authentication-frame{
+  margin-right:6%;
 }
 
 .panel-black
