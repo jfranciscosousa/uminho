@@ -27,13 +27,13 @@ Game.create(name:"Mario Kart 8", description:"Mario Kart 8 is a 2014 kart racing
       release_date: Date.new(2014,5,30), platform: "Wii U", studio:"Nintendo")
 
 Game.create(name:"Dark Souls 3", description:"Dark Souls III is an action role-playing video game developed by FromSoftware and published by Bandai Namco Entertainment for PlayStation 4, Xbox One, and Microsoft Windows. The fourth entry in the Souls series, Dark Souls III was released in Japan in March 2016, and worldwide in April 2016.",
-      release_date: Date.new(2016,4,12), platform: "PS4, Xbox One, Microsoft Windows", studio:"FromSoftware")
+      release_date: Date.new(2016,4,12), platform: "PS4, Xbox One", studio:"FromSoftware")
 
 Game.create(name:"The Witcher 3: Wild Hunt", description:"The Witcher 3: Wild Hunt is a dark fantasy open-world action role-playing video game developed by CD Projekt RED.[5] Announced in February 2013, it was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on 19 May 2015. The game is the third in the series, preceded by The Witcher and The Witcher 2: Assassins of Kings, which are based on the series of fantasy novels by Polish author Andrzej Sapkowski.",
-      release_date: Date.new(2015,5,19), platform: "PS4, Xbox One, Microsoft Windows", studio:"CD Projekt Red")
+      release_date: Date.new(2015,5,19), platform: "PS4, Xbox One", studio:"CD Projekt Red")
 
 Game.create(name:"Fifa 16", description:"FIFA 16 is an association football simulation video game developed by EA Canada and published by EA Sports for Microsoft Windows, Xbox One, PlayStation 4.",
-      release_date: Date.new(2015,9,24), platform: "PS4, Xbox One, Microsoft Windows", studio:"EA Sports")
+      release_date: Date.new(2015,9,24), platform: "PS4, Xbox One", studio:"EA Sports")
 
 
 

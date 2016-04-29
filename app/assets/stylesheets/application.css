@@ -27,14 +27,43 @@
  #wrapper {
  	min-height:100%;
  	position:relative;
- }
+  background: rgba(241,231,103,1);
+  background: -moz-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
+  background: -webkit-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
+}
 
 
 .maincontent {
   margin-left:15%;
   margin-right: 15%;
-  padding-top:10%;
-  padding-bottom: 15%;
+  padding-top:5%;
+  margin-top:5%;
+  padding-bottom: 5%;
+  margin-bottom: 15%;
+  padding-left: 2%;
+  padding-right: 2%;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
+border-radius: 10px 10px 10px 10px;
+}
+
+.padding {
+  height: 25px;
+  background: rgba(241,231,103,1);
+  background: -moz-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
+  background: -webkit-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  background: linear-gradient(45deg, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
 }
 
 /*Minor classes*/
@@ -57,6 +86,17 @@
 
 .text-right {
   text-align: right;
+}
+
+.custom-list-group-item
+{
+    position: relative;
+    display: block;
+    padding: .35rem 1.25rem;
+    margin-bottom: -.0625rem;
+    background-color: #fff;
+    border: .0675rem solid #ddd;
+
 }
 
 
