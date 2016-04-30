@@ -1,2 +1,68 @@
-<p> Name: <%= @album.name%> </p>
-<p> Description: <%= @album.description%> </p>
+<div class="item-header">
+    <h2><%=@album.name%></h2>
+    <div class="small-horizontal-bar">
+
+        <hr/>
+    </div>
+    by
+    <strong><%=@album.artist%></strong>
+</div>
+<input id="tab1" type="radio" name="tabs" checked>
+<label for="tab1">Summary</label>
+
+<input id="tab2" type="radio" name="tabs">
+<label for="tab2">Reviews</label>
+
+<input id="tab3" type="radio" name="tabs">
+<label for="tab3">Media</label>
+
+<section id="content1">
+
+    <div class="item-rating"></div>
+    <div class="item-description">
+
+        <strong>Description:
+        </strong>
+        <%= @album.description %>
+    </div>
+
+    <div class="item-details">
+            <div class="row">
+                <div class="col-sm-4">
+                  <strong>Release date:</strong>
+                  <%= @album.release_date %>
+                </div>
+                <div class="col-sm-4">
+                  <strong>Producer: </strong>
+                  <%= @album.producer %>
+                </div>
+                <div class="col-sm-4">
+                  <strong>Studio: </strong>
+                  <%= @album.studio %>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-sm-8">
+                <strong>Guests: </strong>
+                <%= @album.features %>
+              </div>
+              <div class="col-sm-4">
+                <strong>Duration: </strong>
+                <%= @album.duration %>
+              </div>
+
+            </div>
+    </div>
+
+</section>
+
+<section id="content2">
+    REVIEWS GO HERE!
+</section>
+
+<section id="content3">
+    <p>
+        MEDIA GOES HERE!
+    </p>
+</section>
