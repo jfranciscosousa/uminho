@@ -42,19 +42,19 @@ Game.create(name:"Fifa 16", description:"FIFA 16 is an association football simu
 
 Movie.create(name:"2001: Space Odissey", description:"Humanity finds a mysterious, obviously artificial object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
       release_date: Date.new(1968,10,1), cast:"Keir Dullea, Gary Lockwood, William Sylvester, Daniel Richter, Leonard Rossiter, Margaret Tyzack",
-      director: "Stanley Kubrick", studio:"MGM")
+      director: "Stanley Kubrick", studio:"MGM", duration:"2h29min")
 
 Movie.create(name:"Monty Python and the Holy Grail", description:"King Arthur and his knights embark on a low-budget search for the Grail, encountering many, very silly obstacles.",
       release_date: Date.new(1978,10,27), cast:"Graham Chapman, John Cleese, Eric Idle, Terry Gilliam, Terry Jones, Michael Palin",
-      director: "Terry Gilliam, Terry Jones", studio:"Michael White Productions, National Film Trustee Company")
+      director: "Terry Gilliam, Terry Jones", studio:"Michael White Productions, National Film Trustee Company", duration:"1h31min")
 
 Movie.create(name:"The AristoCats", description:"With the help of a smooth talking tomcat, a family of Parisian felines set to inherit a fortune from their owner try to make it back home after a jealous butler kidnaps them and leaves them in the country.",
       release_date: Date.new(1971, 12, 17), cast:"Phil Harris, Eva Gabor, Sterling Holloway, Scatman Crothers, Paul Winchell",
-      director: "Wolfgang Reitherman", studio:"Walt Disney")
+      director: "Wolfgang Reitherman", studio:"Walt Disney", duration:"1h18min")
 
 Movie.create(name:"The Little Mermaid", description:"A mermaid princess makes a Faustian bargain with an unscrupulous sea-witch in order to meet a human prince on land.",
       release_date: Date.new(1990,12,21), cast:"Rene Auberjonois, Christopher Daniel Barnes, Jodi Benson, Pat Carrol, Paddi Edwards, Buddy Hackett",
-      director: "Ron Clements, John Musker", studio:"Walt Disney")
+      director: "Ron Clements, John Musker", studio:"Walt Disney", duration:"1h23min")
 
 
 ### tv shows

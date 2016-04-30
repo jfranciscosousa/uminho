@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428151531) do
+ActiveRecord::Schema.define(version: 20160430102223) do
 
   create_table "albums", force: :cascade do |t|
     t.string "duration"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20160428151531) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.text    "cast"
-    t.string  "director"
-    t.string  "studio"
-    t.integer "duration"
+    t.text   "cast"
+    t.string "director"
+    t.string "studio"
+    t.string "duration"
   end
 
   create_table "products", force: :cascade do |t|
