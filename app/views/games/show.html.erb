@@ -1,3 +1,11 @@
+<div class="item-header">
+    <h2><%=@game.name%></h2>
+    <div class="small-horizontal-bar">
+
+        <hr/>
+    </div>
+    <strong><%=@game.platform%></strong>
+</div>
 <input id="tab1" type="radio" name="tabs" checked>
 <label for="tab1">Summary</label>
 
@@ -8,6 +16,28 @@
 <label for="tab3">Media</label>
 
 <section id="content1">
+
+  <div class="item-rating"></div>
+  <div class="item-description">
+
+      <strong>Description:
+      </strong>
+      <%= @game.description %>
+  </div>
+
+  <div class="item-details">
+          <div class="row">
+              <div class="col-sm-8">
+                <strong>Studio:</strong>
+                <%= @game.studio %>
+              </div>
+              <div class="col-sm-4">
+                <strong>Release Date: </strong>
+                <%= @game.release_date %>
+              </div>
+          </div>
+  </div>
+
 
 </section>
 
