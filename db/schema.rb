@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430102223) do
+ActiveRecord::Schema.define(version: 20160430103652) do
 
   create_table "albums", force: :cascade do |t|
     t.string "duration"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160430102223) do
   create_table "shows", force: :cascade do |t|
     t.text    "cast"
     t.integer "seasons"
-    t.integer "duration"
+    t.string  "duration"
     t.integer "episodes"
   end
 

@@ -4,20 +4,20 @@
 ##### Albums
 
 Album.create(name: 'The Life of Pablo', description:"The Life of Pablo is the seventh studio album by American rapper Kanye West. It was released on February 14, 2016, by Roc-A-Fella Records, GOOD Music and Def Jam Recordings.",
-      release_date: Date.new(2016,2,14), duration: '59:44', artist: 'Kanye West',
+      release_date: Date.new(2016,2,14), duration: '59m44s', artist: 'Kanye West',
       producer: 'Rick Rubin', studio: 'Windmark Studios',
       features:'Chance the Rapper, Ty Dolla $ign, Kendrick Lamar, Chris Brown, The Weeknd')
 
 Album.create(name: 'Abbey Road', description: "Abbey Road is the 11th studio album by the English rock band the Beatles, released on 26 September 1969 by Apple Records. The recording sessions for the album were the last in which all four Beatles participated. Although \"Let It Be\" was the final album that the Beatles completed before the band's dissolution in April 1970, most of the album had been recorded before the Abbey Road sessions began.",
-      release_date: Date.new(1969,9,26), duration:"47:23", artist:'The Beatles', producer: "George Martin",
+      release_date: Date.new(1969,9,26), duration:"47m23s", artist:'The Beatles', producer: "George Martin",
       studio: "EMI, Olympic and Trident Studios", features:"")
 
 Album.create(name: "Rage Against the Machine", description:"Rage Against the Machine is the debut studio album by American rap metal band Rage Against the Machine. The album was released on November 3, 1992. It went to #1 on the Billboard Heatseekers chart, and #45 on the Billboard 200 chart.",
-      release_date: Date.new(1992,11,3), duration:"52:52", artist:"Rage Against the Machine", producer:"Garth Richardson",
+      release_date: Date.new(1992,11,3), duration:"52m52s", artist:"Rage Against the Machine", producer:"Garth Richardson",
       studio:"Sound City, Scream Studios, Industrial Recording", features:"Maynard James Keenan, Stephen Perkins")
 
 Album.create(name: 'Violence Begets Violence', description:"Violence Begets Violence is the seventh studio album by underground Philadelphia hip hop duo Jedi Mind Tricks. This is their only album to not feature production from Stoupe the Enemy of Mankind because \"his heart wasn't into making JMT records anymore\" as well as the fact that both Vinnie Paz and Jus Allah grew tired of waiting. Two singles were released, \"Target Practice\" and \"When Crows Descend Upon You,\" for which a video has been made. In addition, Shuko remixed the song \"Target Practice\".",
-      release_date: Date.new(2011, 10, 25), duration:"46:54", artist:"Jedi Mind Tricks",
+      release_date: Date.new(2011, 10, 25), duration:"46m54s", artist:"Jedi Mind Tricks",
       producer: "C-Lance, DJ Kwestion, Grand Finale, Hypnotist Beats, Illinformed, Junior Makno, Mr. Green, Nero, Scott Stallone, Shuko",
       studio: "	Enemy Soil", features: "Demoz, Blacastan, King Magnetic, Young Zee & Pacewon and Chip Fu")
 
@@ -61,16 +61,16 @@ Movie.create(name:"The Little Mermaid", description:"A mermaid princess makes a 
 
 Show.create(name:"Game of Thrones", description:"While a civil war brews between several noble families in Westeros, the children of the former rulers of the land attempt to rise up to power. Meanwhile a forgotten race, bent on destruction, return after thousands of years in the North.",
       release_date: Date.new(2011,4,11), cast:"Peter dinklage, Lena Headey, Emilia Clarke, Kit Harrington, Sophie Turner, Maisie Williams, Nikolaj Coster-Waldau, Alfie Allen, 	Aidan Gillen",
-      seasons: 6, duration: 56, episodes:52)
+      seasons: 6, duration: "56m", episodes:52)
 
 Show.create(name:"Silicon Valley", description:"In the high-tech gold rush of modern Silicon Valley, the people most qualified to succeed are the least capable of handling success. A comedy partially inspired by Mike Judge's own experiences as a Silicon Valley engineer in the late 1980s.",
       release_date: Date.new(2015,4,6), cast:"Thomas Middleditch, T.J. Miller, Martin Starr, Kumail Nanjiani, Amanda Crew, Zach Woods",
-      seasons: 3, duration: 28, episodes:19)
+      seasons: 3, duration: "28m", episodes:19)
 
 Show.create(name:"Breaking Bad", description:"A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine, with his former student, in order to secure his family's financial future.",
       release_date: Date.new(2008,1,20), cast:"Bryan Cranston, Anna Gunn, Aaron Paul, Dean Norris, Betsy Brandt, RJ Mitte",
-      seasons: 5, duration: 49, episodes: 62)
+      seasons: 5, duration: "49m", episodes: 62)
 
 Show.create(name:"Fargo", description:"Various chronicles of deception, intrigue and murder in and around frozen Minnesota. Yet all of these tales mysteriously lead back one way or another to Fargo, North Dakota.",
       release_date: Date.new(2014, 4, 15), cast:"Allison Tolman, Collin Hanks, Martin Freeman, Billy Bob Thompson, Kirsten Dunst, Patrick Wilson, Jesse Piemons",
-      seasons: 2, duration: 53, episodes: 20)
+      seasons: 2, duration: "53m", episodes: 20)
