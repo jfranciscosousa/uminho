@@ -18,6 +18,7 @@
 #
 
 class User < ActiveRecord::Base
+  acts_as_voter
   scope :male, -> { where(gender: 'Male') }
   scope :female, -> { where(gender: 'Female') }
   scope :other, -> { where(gender: 'Other') }

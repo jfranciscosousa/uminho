@@ -8,6 +8,8 @@ class Ability
 
     if user.role == 'user'
       can :create, Review
+      can :like, Review
+      can :dislike, Review
     elsif user.role == 'admin'
       can :manage, :all
     elsif user.role == 'moderator'
