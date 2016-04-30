@@ -88,7 +88,7 @@ border-radius: 10px 10px 10px 10px;
 }
 
 .authentication-frame{
-  margin-right:6%;
+  margin-right:4%;
 }
 
 .panel-black
@@ -99,6 +99,12 @@ border-radius: 10px 10px 10px 10px;
 }
 
 .category-title {
+  color: #fff;
+}
+
+.navbar-font {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 25px;
   color: #fff;
 }
 
@@ -117,6 +123,13 @@ border-radius: 10px 10px 10px 10px;
 
 }
 
+
+.navbar .nav > li > a, .navbar .nav > li > a:first-letter,
+.navbar .nav > li.current-menu-item > a,
+.navbar .nav > li.current-menu-ancestor > a {
+  color: white;
+  font-size: 15px;
+}
 
 .footer-distributed{
   bottom:0;
