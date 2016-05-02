@@ -18,18 +18,10 @@
 class Product < ActiveRecord::Base
   actable
   has_many :reviews
+  scope :coming_soon, -> { where("release_date > ?", Date.today).order(:release_date).limit(10) }
 
   def score
-    numreviews = reviews.count
-    if  numreviews == 0
-      return 0
-    else
-      total = 0
-      for review in reviews
-        total += review.score
-      end
-      total / numreviews
-    end
+    reviews.average(:score).to_f
   end
 
   before_save do
