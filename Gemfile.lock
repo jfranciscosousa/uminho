@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_votable (0.10.0)
     annotate (2.7.0)
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
@@ -79,7 +80,6 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.8)
-    enum_help (0.0.15)
     erubis (2.7.0)
     execjs (2.6.0)
     font-awesome-rails (4.6.1.0)
@@ -117,6 +117,8 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -205,6 +207,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_record-acts_as
+  acts_as_votable
   annotate
   better_errors
   binding_of_caller
@@ -214,11 +217,11 @@ DEPENDENCIES
   country_select
   devise
   devise-bootstrap-views
-  enum_help
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
+  quiet_assets
   rails (= 4.2.5.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

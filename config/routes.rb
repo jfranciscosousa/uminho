@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  root 'home#index'
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :games
@@ -10,7 +12,10 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  root 'home#index'
+  post "reviews/:id/like" => "reviews#like", as: 'like_review'
+  post "reviews/:id/dislike" => "reviews#dislike", as: 'dislike_review'
+
+
 
   #get "games/:id" => "games#show", as: :game
 
