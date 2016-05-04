@@ -42,7 +42,7 @@ Game.create(name:"Fifa 16", description:"FIFA 16 is an association football simu
 
 Movie.create(name:"2001: Space Odissey", description:"Humanity finds a mysterious, obviously artificial object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
       release_date: Date.new(1968,10,1), cast:"Keir Dullea, Gary Lockwood, William Sylvester, Daniel Richter, Leonard Rossiter, Margaret Tyzack",
-      director: "Stanley Kubrick", studio:"MGM", duration:"2h29min")
+      director: "Stanley Kubrick", studio:"MGM", duration:"2h29min", trailer:"https://www.youtube.com/watch?v=Z2UWOeBcsJI")
 
 Movie.create(name:"Monty Python and the Holy Grail", description:"King Arthur and his knights embark on a low-budget search for the Grail, encountering many, very silly obstacles.",
       release_date: Date.new(1978,10,27), cast:"Graham Chapman, John Cleese, Eric Idle, Terry Gilliam, Terry Jones, Michael Palin",
