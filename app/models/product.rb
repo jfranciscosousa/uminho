@@ -21,8 +21,9 @@ class Product < ActiveRecord::Base
   validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,
                                     message: "Only youtube links" }
 
-  #validates :avatar, format: { with: ^(https?\:\/\/)?(www\.imgur\.com)\/.+$/,
-   #                             message: "Only youtube links" }
+  validates :avatar, format: { with: /https?:\/\/(\w+\.)?imgur.com\//,
+                                message: "Only imgur links" }
+
 
   def score
     numreviews = reviews.count
