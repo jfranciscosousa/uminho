@@ -1,91 +1,39 @@
-
 <div class="item-header">
-    <h2><%=@game.name%></h2>
-    <div class="small-horizontal-bar">
-
-        <hr/>
-    </div>
-    <strong><%=@game.platform%></strong>
+  <h2><%=@game.name%></h2>
+  <div class="small-horizontal-bar">
+    <hr/>
+  </div>
+  <strong><%=@game.platform%></strong>
 </div>
 <input id="tab1" type="radio" name="tabs" checked>
 <label for="tab1">Summary</label>
-
 <input id="tab2" type="radio" name="tabs">
 <label for="tab2">Reviews</label>
-
 <input id="tab3" type="radio" name="tabs">
 <label for="tab3">Media</label>
-
 <section id="content1">
-
   <div class="item-rating"></div>
   <div class="item-description">
-
-      <strong>Description:
+    <strong>Description:
       </strong>
-      <%= @game.description %>
+    <%= @game.description %>
   </div>
-
   <div class="item-details">
-          <div class="row">
-              <div class="col-sm-8">
-                <strong>Studio:</strong>
-                <%= @game.studio %>
-              </div>
-              <div class="col-sm-4">
-                <strong>Release Date: </strong>
-                <%= @game.release_date %>
-              </div>
-          </div>
-  </div>
-
-
-</section>
-
-<section id="content2">
-  <div class="row" style="padding-top: 50px">
-    <div class="col-md-6">
-        <div class="panel panel-default" style="padding: 25px">
-            <div style="padding: 10px">
-                <% if  can? :create, Review %>
-                    <%= link_to "Write Review", new_product_review_path(@game.acting_as), class: "btn btn-default" %>
-                <% else %>
-                    <div title="You must log in to submit reviews!" data-toggle="data-toggle">
-                        <%= link_to "Write Review", new_product_review_path(@game.acting_as),
-                          class: "btn btn-default disabled"
-                        %>
-                    </div>
-                <% end %>
-            </div>
-            <% for review in @game.reviews %>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="pull-left">
-                            <p><%= review.user.email %></p>
-                        </div>
-                        <div class="pull-right">
-                            <p class="text-right"><%= review.score %></p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="panel-body">
-                        <%= review.text%>
-                        <div class="Reviews Likes">
-                            <%= link_to "Like", like_review_path(review), class: "glyphicon glyphicon-thumbs-up", method: :post %>
-                            <%= link_to "Dislike", dislike_review_path(review), class: "glyphicon glyphicon-thumbs-down", method: :post %>
-                            <div class="Description">
-                              <%= review.get_likes.size %> out of <%= review.votes_for.size %> users liked this review.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-        </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <strong>Studio:</strong>
+        <%= @game.studio %>
+      </div>
+      <div class="col-sm-4">
+        <strong>Release Date: </strong>
+        <%= @game.release_date %>
+      </div>
     </div>
-</div>
-
+  </div>
 </section>
-
+<section id="content2">
+  <%= render 'reviews/index' , product: @game.acting_as %>
+</section>
 <section id="content3">
   <p>
     MEDIA GOES HERE!
