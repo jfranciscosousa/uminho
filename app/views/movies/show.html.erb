@@ -1,7 +1,11 @@
 <div class="item-header">
     <h2><%=@movie.name%></h2>
+   <div class="row">
+      <div class="col-md-12">
+        <img class="img-responsive center-block forceimg" src="<%=@movie.avatar%>" alt="Movie image" width="800" >
+      </div>
+    </div>
     <div class="small-horizontal-bar">
-
         <hr/>
     </div>
     directed by
@@ -58,7 +62,9 @@
 </section>
 
 <section id="content3">
-    <p>
-        MEDIA GOES HERE!
-    </p>
+  <div class="row">
+    <div class="col-md-12 embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="<%=@movie.trailer%>"></iframe>
+    </div>
+  </div>
 </section>

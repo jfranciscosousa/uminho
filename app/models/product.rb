@@ -18,6 +18,12 @@
 class Product < ActiveRecord::Base
   actable
   has_many :reviews
+  validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,
+                                    message: "Only youtube links" }
+
+  validates :avatar, format: { with: /https?:\/\/(\w+\.)?imgur.com\//,
+                                message: "Only imgur links" }
+
 
   def score
     numreviews = reviews.count
