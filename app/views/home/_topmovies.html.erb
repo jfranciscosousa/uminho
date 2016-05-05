@@ -9,12 +9,15 @@
         <% for m in @movies %>
         <li class="list-group-item">
           <div class="row">
-              <div class="col-sm-8">
+            <div class="col-sm-3">
+              <img class="img-responsive" src="<%=m.avatar%>" alt="Movie icon">
+            </div>
+              <div class="col-sm-7">
                 <strong><%= link_to(m.name,m) %></strong>
                 <br />
                 <small><%=m.director%></small>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-2">
                 <div class="text-right">
                 <%= m.score %>
               </div>
