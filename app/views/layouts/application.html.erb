@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Critique</title>
+        <%=favicon_link_tag%>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
@@ -9,6 +10,8 @@
     <body>
       <div id="wrapper">
         <%= render 'shared/navbar' %>
+        <div class="padding">
+        </div>
         <div class="maincontent">
             <% flash.each do |type, message| %>
                 <div class="flash alert <%= bootstrap_class_for(type) %> fade in">
@@ -17,6 +20,9 @@
                 </div>
             <% end %>
             <%= yield %>
+        </div>
+        <div class="padding">
+
         </div>
         <%= render 'shared/footer' %>
       </div>

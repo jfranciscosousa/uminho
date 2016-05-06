@@ -1,2 +1,70 @@
-<p> Name: <%= @movie.name%> </p>
-<p> Description: <%= @movie.description%> </p>
+<div class="item-header">
+    <h2><%=@movie.name%></h2>
+   <div class="row">
+      <div class="col-md-12">
+        <img class="img-responsive center-block forceimg" src="<%=@movie.avatar%>" alt="Movie image" width="800" >
+      </div>
+    </div>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
+    directed by
+    <strong><%=@movie.director%></strong>
+</div>
+<input id="tab1" type="radio" name="tabs" checked>
+<label for="tab1">Summary</label>
+
+<input id="tab2" type="radio" name="tabs">
+<label for="tab2">Reviews</label>
+
+<input id="tab3" type="radio" name="tabs">
+<label for="tab3">Media</label>
+
+<section id="content1">
+
+    <div class="item-rating"></div>
+    <div class="item-description">
+
+        <strong>Description:
+        </strong>
+        <%= @movie.description %>
+    </div>
+
+    <div class="item-details">
+            <div class="row">
+                <div class="col-sm-8">
+                  <strong>Studio:</strong>
+                  <%= @movie.studio %>
+                </div>
+                <div class="col-sm-4">
+                  <strong>Release Date: </strong>
+                  <%= @movie.release_date %>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-sm-8">
+                <strong>Cast: </strong>
+                <%= @movie.cast %>
+              </div>
+              <div class="col-sm-4">
+                <strong>Duration: </strong>
+                <%= @movie.duration %>
+              </div>
+
+            </div>
+    </div>
+
+</section>
+
+<section id="content2">
+    REVIEWS GO HERE!
+</section>
+
+<section id="content3">
+  <div class="row">
+    <div class="col-md-12 embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="<%=@movie.trailer%>"></iframe>
+    </div>
+  </div>
+</section>
