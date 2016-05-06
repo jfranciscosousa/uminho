@@ -18,6 +18,14 @@
 class Product < ActiveRecord::Base
   actable
   has_many :reviews
+
+  scope :games, -> { where(actable_type: 'Game')}
+  scope :movies, -> { where(actable_type: 'Movie')}
+  scope :shows, -> { where(actable_type: 'Show')}
+  scope :albums, -> { where(actable_type: 'Album')}
+  scope :coming_soon, -> { where('release_date > ?', Date.today).order(:release_date).limit(10) }
+  scope :hot, -> { order(importance: :desc).limit(10) }
+
   validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,
                                     message: "Only youtube links" }
 
@@ -26,16 +34,7 @@ class Product < ActiveRecord::Base
 
 
   def score
-    numreviews = reviews.count
-    if  numreviews == 0
-      return 0
-    else
-      total = 0
-      for review in reviews
-        total += review.score
-      end
-      total / numreviews
-    end
+    reviews.average(:score).to_f
   end
 
   before_save do
