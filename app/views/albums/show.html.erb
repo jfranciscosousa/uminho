@@ -1,9 +1,12 @@
 <div class="item-header">
     <h2><%=@album.name%></h2>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
     <div class="row">
-      <div class="col-md-12">
-        <img class="img-responsive center-block forceimg" src="<%=@album.avatar%>" alt="Album image" width="800" >
-      </div>
+        <div class="col-md-12">
+            <img class="img-responsive center-block forceimg" src="<%=@album.avatar%>" alt="Album image" width="800">
+        </div>
     </div>
     <div class="small-horizontal-bar">
         <hr/>
@@ -13,62 +16,56 @@
 </div>
 <input id="tab1" type="radio" name="tabs" checked>
 <label for="tab1">Summary</label>
-
 <input id="tab2" type="radio" name="tabs">
 <label for="tab2">Reviews</label>
-
 <input id="tab3" type="radio" name="tabs">
 <label for="tab3">Media</label>
-
 <section id="content1">
-
     <div class="item-rating"></div>
     <div class="item-description">
-
         <strong>Description:
         </strong>
         <%= @album.description %>
     </div>
-
     <div class="item-details">
-            <div class="row">
-                <div class="col-sm-4">
-                  <strong>Release date:</strong>
-                  <%= @album.release_date %>
-                </div>
-                <div class="col-sm-4">
-                  <strong>Producer: </strong>
-                  <%= @album.producer %>
-                </div>
-                <div class="col-sm-4">
-                  <strong>Studio: </strong>
-                  <%= @album.studio %>
-                </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <strong>Release date:</strong>
+                <%= @album.release_date %>
             </div>
-            <br />
-            <div class="row">
-              <div class="col-sm-8">
-                <strong>Guests: </strong>
-                <%= @album.features %>
-              </div>
-              <div class="col-sm-4">
-                <strong>Duration: </strong>
-                <%= @album.duration %>
-              </div>
-
+            <div class="col-sm-4">
+                <strong>Producer:
+                </strong>
+                <%= @album.producer %>
             </div>
-    </div>
-
-</section>
-
-<section id="content2">
-    REVIEWS GO HERE!
-</section>
-
-<section id="content3">
-      <div class="row">
-        <div class="col-md-12 embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="<%=@album.trailer%>"></iframe>
+            <div class="col-sm-4">
+                <strong>Studio:
+                </strong>
+                <%= @album.studio %>
+            </div>
         </div>
-      </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-8">
+                <strong>Guests:
+                </strong>
+                <%= @album.features %>
+            </div>
+            <div class="col-sm-4">
+                <strong>Duration:
+                </strong>
+                <%= @album.duration %>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content2">
+    <%= render 'reviews/index' , product: @album.acting_as %>
+</section>
+<section id="content3">
+    <div class="row">
+        <div class="col-md-12 embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="<%=@album.trailer%>"></iframe>
+        </div>
+    </div>
 </section>

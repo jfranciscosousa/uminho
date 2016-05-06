@@ -1,70 +1,64 @@
 <div class="item-header">
     <h2><%=@show.name%></h2>
-    <div class="row">
-      <div class="col-md-12">
-        <img class="img-responsive center-block forceimg" src="<%=@show.avatar%>" alt="Show image" width="800" >
-      </div>
-    </div>
     <div class="small-horizontal-bar">
-
         <hr/>
     </div>
-    <strong><%=@show.episodes%> episodes</strong>
+    <div class="row">
+        <div class="col-md-12">
+            <img class="img-responsive center-block forceimg" src="<%=@show.avatar%>" alt="Show image" width="800">
+        </div>
+    </div>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
+    <strong><%=@show.episodes%>
+        episodes</strong>
 </div>
-
 <input id="tab1" type="radio" name="tabs" checked>
 <label for="tab1">Summary</label>
-
 <input id="tab2" type="radio" name="tabs">
 <label for="tab2">Reviews</label>
-
 <input id="tab3" type="radio" name="tabs">
 <label for="tab3">Media</label>
-
 <section id="content1">
-
-  <div class="item-rating"></div>
-  <div class="item-description">
-
-      <strong>Description:
-      </strong>
-      <%= @show.description %>
-  </div>
-
-  <div class="item-details">
-          <div class="text-center">
+    <div class="item-rating"></div>
+    <div class="item-description">
+        <strong>Description:
+        </strong>
+        <%= @show.description %>
+    </div>
+    <div class="item-details">
+        <div class="text-center">
             <strong>Cast:</strong>
             <%= @show.cast %>
-          </div>
-          <br />
-          <div class="row">
+        </div>
+        <br/>
+        <div class="row">
             <div class="col-sm-4">
-              <strong>Seasons: </strong>
-              <%= @show.seasons %>
+                <strong>Seasons:
+                </strong>
+                <%= @show.seasons %>
             </div>
             <div class="col-sm-4">
-              <strong>Episode duration: </strong>
-              <%= @show.duration %>
+                <strong>Episode duration:
+                </strong>
+                <%= @show.duration %>
             </div>
             <div class="col-sm-4">
-              <strong>Release Date: </strong>
-              <%= @show.release_date %>
+                <strong>Release Date:
+                </strong>
+                <%= @show.release_date %>
             </div>
-
-          </div>
-  </div>
-
-
-</section>
-
-<section id="content2">
-  REVIEWS GO HERE!
-</section>
-
-<section id="content3">
-  <div class="row">
-    <div class="col-md-12 embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="<%=@show.trailer%>"></iframe>
+        </div>
     </div>
-  </div>
+</section>
+<section id="content2">
+    <%= render 'reviews/index' , product: @show.acting_as %>
+</section>
+<section id="content3">
+    <div class="row">
+        <div class="col-md-12 embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="<%=@show.trailer%>"></iframe>
+        </div>
+    </div>
 </section>
