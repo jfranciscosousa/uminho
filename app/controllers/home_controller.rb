@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+  helper ProductsHelper
+
+
   def index
     if user_signed_in?
       if current_user.role == 'admin'
