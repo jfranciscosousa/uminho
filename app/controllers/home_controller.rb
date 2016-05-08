@@ -11,5 +11,6 @@ class HomeController < ApplicationController
     @movies = Movie.all
     @shows = Show.all
     @albums = Album.all
+    @top5 = Product.order(importance: :desc).limit(5)
   end
 end
