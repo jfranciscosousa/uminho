@@ -35,7 +35,7 @@ class ReviewsController < ApplicationController
       if @review.save
         format.html do
           flash[:notice] = 'Review was successfully created.'
-          redirect_to(action: 'index')
+          redirect_to request.referer
         end
         format.json { render :show, status: :created, location: @review }
       else
