@@ -23,14 +23,17 @@ class Product < ActiveRecord::Base
   scope :movies, -> { where(actable_type: 'Movie')}
   scope :shows, -> { where(actable_type: 'Show')}
   scope :albums, -> { where(actable_type: 'Album')}
+  scope :best, -> { order(score: :desc)}
   scope :coming_soon, -> { where('release_date > ?', Date.today).order(:release_date).limit(10) }
-  scope :hot, -> { order(importance: :desc).limit(10) }
+  scope :hot, -> { order(importance: :desc) }
 
   validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,
                                     message: "Only youtube links" }
 
   validates :avatar, format: { with: /https?:\/\/(\w+\.)?imgur.com\//,
                                 message: "Only imgur links" }
+
+
 
 
   def score

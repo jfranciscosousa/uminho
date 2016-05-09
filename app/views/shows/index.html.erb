@@ -3,7 +3,6 @@
         <thead>
             <tr>
                 <th><%=Show.human_attribute_name(:name)%></th>
-                <th><%=Show.human_attribute_name(:description)%></th>
                 <th><%=Show.human_attribute_name(:release_date)%></th>
                 <th><%=Show.human_attribute_name(:importance)%></th>
                 <th><%=Show.human_attribute_name(:cast)%></th>
@@ -17,7 +16,6 @@
             <% for show in @shows %>
             <tr>
                 <td><%=show.name%></td>
-                <td><%=show.description%></td>
                 <td><%=show.pretty_date%></td>
                 <td><%=show.importance%></td>
                 <td><%=show.cast%></td>
