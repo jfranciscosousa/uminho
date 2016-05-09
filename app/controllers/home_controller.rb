@@ -10,9 +10,10 @@ class HomeController < ApplicationController
         render 'moderator-home'
       end
     end
-    @games = Game.all
-    @movies = Movie.all
-    @shows = Show.all
-    @albums = Album.all
+    @games = Product.games.best.map { |p| p.specific }
+    @movies = Product.movies.best.map { |p| p.specific }
+    @shows = Product.shows.best.map { |p| p.specific }
+    @albums = Product.albums.best.map { |p| p.specific }
+    @top5 = Product.hot.limit(5)
   end
 end

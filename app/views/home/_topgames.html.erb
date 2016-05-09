@@ -1,29 +1,29 @@
 <div class="panel panel-black">
-                <div class="panel-heading">
-                  <div class="category-title">
-                    <h3 class="panel-title">
-                        Top Games</h3>
-                      </div>
-                </div>
+    <div class="panel-heading">
+        <div class="category-title">
+            <h3 class="panel-title">
+                Top Games</h3>
+        </div>
+    </div>
     <ul class="list-group">
         <% for g in @games %>
-        <li class="list-group-item">
-          <div class="row">
-              <div class="col-sm-3">
-                <img class="img-responsive" src="<%=g.avatar%>" alt="Game icon">
-              </div>
-              <div class="col-sm-7">
-                  <strong><%= link_to(g.name,g)%></strong>
-                  <br />
-                  <small><%=g.platform%></small>
-              </div>
-              <div class="col-sm-2">
-                  <div class="text-center">
-                    <%= color_score(g.score) %>
-                  </div>
-              </div>
-          </div>
-        </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="img-responsive" src="<%=g.avatar%>" alt="Game icon">
+                    </div>
+                    <div class="col-sm-7">
+                        <strong><%= link_to(g.name,g)%></strong>
+                        <br />
+                        <small><%=g.platform%></small>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="text-center">
+                            <%= color_score(g.score) %>
+                        </div>
+                    </div>
+                </div>
+            </li>
         <% end%>
     </ul>
-  </div>
+</div>

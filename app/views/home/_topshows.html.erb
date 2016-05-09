@@ -1,29 +1,29 @@
 <div class="panel panel-black">
-                <div class="panel-heading">
-                  <div class="category-title">
-                    <h3 class="panel-title">
-                        Top TV Shows</h3>
-                      </div>
-                </div>
+    <div class="panel-heading">
+        <div class="category-title">
+            <h3 class="panel-title">
+                Top TV Shows</h3>
+        </div>
+    </div>
     <ul class="list-group">
         <% for s in @shows %>
-        <li class="list-group-item">
-          <div class="row">
-              <div class="col-sm-3">
-                <img class="img-responsive" src="<%=s.avatar%>" alt="Show image">
-              </div>
-              <div class="col-sm-7">
-                <strong><%= link_to(s.name,s) %></strong>
-                <br />
-                <small><%=s.episodes%> episodes</small>
-              </div>
-              <div class="col-sm-2">
-                <div class="text-center">
-                  <%= color_score(s.score) %>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="img-responsive" src="<%=s.avatar%>" alt="Show image">
+                    </div>
+                    <div class="col-sm-7">
+                        <strong><%= link_to(s.name,s) %></strong>
+                        <br />
+                        <small><%=s.episodes%> episodes</small>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="text-center">
+                            <%= color_score(s.score) %>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-        </li>
+            </li>
         <% end%>
     </ul>
-  </div>
+</div>
