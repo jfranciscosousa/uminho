@@ -1,29 +1,29 @@
 <div class="panel panel-black">
-                <div class="panel-heading">
-                  <div class="category-title">
-                    <h3 class="panel-title">
-                        Top Movies</h3>
-                      </div>
-                </div>
+    <div class="panel-heading">
+        <div class="category-title">
+            <h3 class="panel-title">
+                Top Movies</h3>
+        </div>
+    </div>
     <ul class="list-group">
         <% for m in @movies %>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-3">
-              <img class="img-responsive" src="<%=m.avatar%>" alt="Movie icon">
-            </div>
-              <div class="col-sm-7">
-                <strong><%= link_to(m.name,m) %></strong>
-                <br />
-                <small><%=m.director%></small>
-              </div>
-              <div class="col-sm-2">
-                <div class="text-right">
-                <%= m.score.to_i %>
-              </div>
-              </div>
-          </div>
-        </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="img-responsive" src="<%=m.avatar%>" alt="Movie icon">
+                    </div>
+                    <div class="col-sm-7">
+                        <strong><%= link_to(m.name,m) %></strong>
+                        <br />
+                        <small><%=m.director%></small>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="text-center">
+                            <%= color_score(m.score) %>
+                        </div>
+                    </div>
+                </div>
+            </li>
         <% end%>
     </ul>
-  </div>
+</div>
