@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   validates :role, inclusion: { in: %w(admin moderator user), message: 'is invalid!' }
 
   # default values
-  before_save :default_values
+  before_validation :default_values
 
   def default_values
     self.role ||= 'user'
