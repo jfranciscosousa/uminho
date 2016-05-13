@@ -14,6 +14,8 @@ class Ability
       can :manage, :all
     elsif user.role == 'moderator'
       can :manage, Product
+      can :manage, Game
+      can :manage, Album
     end
   end
 end

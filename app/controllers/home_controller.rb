@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       if current_user.role == 'admin'
         render 'admin-home'
       elsif current_user.role == 'moderator'
-        render 'moderator-home'
+        render 'admin-home'
       end
     end
     @games = Product.games.best.map { |p| p.specific }

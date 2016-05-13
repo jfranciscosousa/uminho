@@ -60,6 +60,8 @@ class ShowsController < ApplicationController
   def show_params
     params.require(:show).permit(:name,
                                  :description,
+                                 :trailer,
+                                 :avatar,
                                  :release_date,
                                  :rating,
                                  :importance,
