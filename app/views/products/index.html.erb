@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table id="productsTable" class="table table-bordered">
         <thead>
             <tr>
                 <th><%=Product.human_attribute_name(:name)%></th>
@@ -20,3 +20,7 @@
         </tbody>
     </table>
 </div>
+
+<script>
+  $('#productsTable').DataTable();
+</script>

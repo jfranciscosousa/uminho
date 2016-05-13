@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table id="showsTable" class="table table-bordered">
         <thead>
             <tr>
                 <th><%=Show.human_attribute_name(:name)%></th>
@@ -33,3 +33,7 @@
     </table>
     <%= link_to('New show', new_show_path()) %>
 </div>
+
+<script>
+  $('#showsTable').DataTable();
+</script>

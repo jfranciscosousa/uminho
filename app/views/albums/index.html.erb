@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table id="albumsTable" class="table table-bordered">
         <thead>
             <tr>
                 <th><%=Album.human_attribute_name(:name)%></th>
@@ -37,3 +37,7 @@
     </table>
     <%= link_to('New album', new_album_path()) %>
 </div>
+
+<script>
+  $('#albumsTable').DataTable();
+</script>

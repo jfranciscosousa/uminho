@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table id="moviesTable" class="table table-bordered">
         <thead>
             <tr>
                 <th><%=Movie.human_attribute_name(:name)%></th>
@@ -35,3 +35,7 @@
     </table>
     <%= link_to('New movie', new_movie_path()) %>
 </div>
+
+<script>
+  $('#moviesTable').DataTable();
+</script>

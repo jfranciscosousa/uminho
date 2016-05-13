@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
+#pretty tables
+gem 'jquery-datatables-rails'
+#generate random data!
 gem 'faker'
+#let models be voted/downvoted
 gem 'acts_as_votable'
+#country select form
 gem 'country_select'
 #Devise forms with bootstrap
 gem 'devise-bootstrap-views'
