@@ -28,10 +28,10 @@ class Product < ActiveRecord::Base
   scope :hot, -> { order(importance: :desc) }
 
   validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,
-                                    message: "Only youtube links" }
+                                    message: "not a youtube link" }
 
   validates :avatar, format: { with: /https?:\/\/(\w+\.)?imgur.com\//,
-                                message: "Only imgur links" }
+                                message: "not a imgur link" }
 
 
 

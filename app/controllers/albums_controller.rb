@@ -74,10 +74,15 @@ class AlbumsController < ApplicationController
     params.require(:album).permit(:name,
                                  :description,
                                  :release_date,
+                                 :trailer,
+                                 :avatar,
                                  :rating,
                                  :importance,
                                  :duration,
-                                 :artist, :producer, :studio, :features)
+                                 :artist,
+                                 :producer,
+                                 :studio,
+                                 :features)
   end
 
 end

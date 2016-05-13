@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
+#pretty tables
+gem 'jquery-datatables-rails'
+#generate random data!
 gem 'faker'
+#let models be voted/downvoted
 gem 'acts_as_votable'
+#country select form
 gem 'country_select'
 #Devise forms with bootstrap
 gem 'devise-bootstrap-views'
@@ -27,8 +32,14 @@ end
 gem "binding_of_caller"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

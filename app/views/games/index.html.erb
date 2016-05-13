@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table id="gamesTable" class="table table-bordered">
         <thead>
             <tr>
                 <th><%=Game.human_attribute_name(:name)%></th>
@@ -31,3 +31,7 @@
     </table>
     <%= link_to('New game', new_game_path()) %>
 </div>
+
+<script>
+  $('#gamesTable').DataTable();
+</script>

@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
   has_many :products, through: :reviews
 
   # validations
-  validates :gender, inclusion: { in: %w(Male Female Other), message: 'Invalid gender.' }
+  validates :gender, inclusion: { in: %w(Male Female Other), message: 'is invalid!' }
+  validates :role, inclusion: { in: %w(admin moderator user), message: 'is invalid!' }
 
   # default values
   before_save :default_values
