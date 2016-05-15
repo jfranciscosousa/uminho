@@ -1,42 +1,56 @@
-<div class="row" style="padding-top: 50px">
-    <div class="col-md-6">
-        <div class="panel panel-default" style="padding: 25px">
-            <div style="padding: 10px">
-                <% if  can? :create, Review %>
-                    <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
-                <% else %>
-                    <div title="You must log in to submit reviews!" data-toggle="data-toggle">
-                        <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default disabled"%>
+<div class="text-center">
+
+    <% if  can? :create, Review %>
+    <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
+<% else %>
+    <div title="You must log in to submit reviews!" data-toggle="data-toggle">
+        <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default disabled"%>
+    </div>
+    <% end %>
+</div>
+<div class="reviewBox">
+    <div class="panel panel-default" style="padding: 25px">
+        <div style="padding: 10px"></div>
+        <% for review in product.reviews %>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p>
+                            <strong><%= review.user.email %></strong>
+                        </p>
                     </div>
-                <% end %>
-            </div>
-            <% for review in product.reviews %>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="pull-left">
-                            <p><%= review.user.email %></p>
-                        </div>
+                    <div class="col-sm-4">
                         <div class="pull-right">
-                            <p class="text-right"><%= review.score %></p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="panel-body">
-                        <%= review.text%>
-                        <div class="Reviews Likes">
-                            <%= link_to_if((can? :create, Review), like_review_path(review), method: :post) do%>
-                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
-                            <%end%>
-                            <%= link_to_if((can? :create, Review), like_review_path(review), method: :post) do%>
-                                <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
-                            <%end%>
-                            <div class="Description">
-                                <%= review.get_likes.size %> out of <%= review.votes_for.size %> users liked this review.
+
+                            <div class="scoreBox">
+                                <div class="text-center">
+                                    <%= color_score(review.score) %>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-            <% end %>
+            </div>
+            <div class="panel-body">
+                <%= review.text%>
+                <div class="Reviews Likes">
+                    <%= link_to_if((can? :create, Review), like_review_path(review), method: :post) do%>
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
+                    <%end%>
+                    <%= link_to_if((can? :create, Review), like_review_path(review), method: :post) do%>
+                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
+                    <%end%>
+                    <div class="Description">
+                        <%= review.get_likes.size %>
+                        out of
+                        <%= review.votes_for.size %>
+                        users liked this review.
+                    </div>
+                </div>
+            </div>
         </div>
+        <% end %>
     </div>
 </div>
