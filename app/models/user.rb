@@ -44,4 +44,8 @@ class User < ActiveRecord::Base
   def can_review?(product)
     !product.in?(self.products)
   end
+
+  def has_role?(*role_names)
+    self.roles.where(:name => role_names).present?
+  end
 end
