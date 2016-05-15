@@ -4,36 +4,48 @@
             <tr>
                 <th><%=Show.human_attribute_name(:name)%></th>
                 <th><%=Show.human_attribute_name(:release_date)%></th>
-                <th><%=Show.human_attribute_name(:importance)%></th>
-                <th><%=Show.human_attribute_name(:cast)%></th>
+                <th><%=Show.human_attribute_name(:rating)%></th>
                 <th><%=Show.human_attribute_name(:seasons)%></th>
                 <th><%=Show.human_attribute_name(:duration)%></th>
                 <th><%=Show.human_attribute_name(:episodes)%></th>
+                <% if can? :manage, Show %>
                 <th>Actions</th>
+                <%end%>
             </tr>
         </thead>
         <tbody>
             <% for show in @shows %>
             <tr>
-                <td><%=show.name%></td>
+                <td><%=link_to(show.name,show)%></td>
                 <td><%=show.pretty_date%></td>
-                <td><%=show.importance%></td>
-                <td><%=show.cast%></td>
+                <td>
+                  <div class="scoreBox">
+                    <div class="text-center">
+                      <%= color_score(show.score) %>
+                    </div>
+                  </div>
+                </td>
                 <td><%=show.seasons%></td>
                 <td><%=show.duration%></td>
                 <td><%=show.episodes%></td>
+                <% if can? :manage, Show %>
                 <td>
                     <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_show_path(show), :class => 'btn btn-default btn-xs' %>
+                          edit_show_path(show), :class => 'btn btn-default btn-xs' %>
                     <%= link_to t('.destroy', :default => t("helpers.links.destroy")), show_path(show), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
                 </td>
+                <%end%>
             </tr>
             <% end %>
         </tbody>
     </table>
-    <%= link_to('New show', new_show_path()) %>
+    <% if can? :manage, Show %>
+    <div style="text-align:center">
+        <button type="button" class="btn btn-default"><%= link_to('Add a new show', new_show_path()) %></button>
+    </div>
+    <%end%>
 </div>
 
 <script>
-  $('#showsTable').DataTable();
+    $('#showsTable').DataTable();
 </script>
