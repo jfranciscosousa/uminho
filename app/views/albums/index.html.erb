@@ -36,7 +36,13 @@
         </tbody>
     </table>
 
-    <%= link_to('New album', new_album_path()) %>
+    <% if user_signed_in? %>
+    <% if current_user.role == "admin" || current_user.role == "moderator"%>
+    <div style="text-align:center">
+        <button type="button" class="btn btn-default"><%= link_to('Add a new album', new_album_path()) %></button>
+    </div>
+    <%end%>
+    <%end%>
 </div>
 
 <script>

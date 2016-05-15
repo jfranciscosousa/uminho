@@ -35,7 +35,13 @@
                 <% end %>
             </tbody>
         </table>
-        <%= link_to('New game', new_game_path()) %>
+        <% if user_signed_in? %>
+        <% if current_user.role == "admin" || current_user.role == "moderator"%>
+        <div style="text-align:center">
+            <button type="button" class="btn btn-default"><%= link_to('Add a new game', new_game_path()) %></button>
+        </div>
+        <%end%>
+        <%end%>
     </div>
 
     <script>

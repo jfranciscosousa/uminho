@@ -9,9 +9,9 @@
                 <th><%=Show.human_attribute_name(:duration)%></th>
                 <th><%=Show.human_attribute_name(:episodes)%></th>
                 <% if user_signed_in? %>
-                  <% if current_user.role == "admin" || current_user.role == "moderator"%>
-                    <th>Actions</th>
-                  <%end%>
+                <% if current_user.role == "admin" || current_user.role == "moderator"%>
+                <th>Actions</th>
+                <%end%>
                 <%end%>
             </tr>
         </thead>
@@ -25,21 +25,27 @@
                 <td><%=show.duration%></td>
                 <td><%=show.episodes%></td>
                 <% if user_signed_in? %>
-                  <% if current_user.role == "admin" || current_user.role == "moderator"%>
-                    <td>
-                        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                <% if current_user.role == "admin" || current_user.role == "moderator"%>
+                <td>
+                    <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_show_path(show), :class => 'btn btn-default btn-xs' %>
-                        <%= link_to t('.destroy', :default => t("helpers.links.destroy")), show_path(show), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
-                    </td>
-                  <%end%>
+                    <%= link_to t('.destroy', :default => t("helpers.links.destroy")), show_path(show), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
+                </td>
+                <%end%>
                 <%end%>
             </tr>
             <% end %>
         </tbody>
     </table>
-    <%= link_to('New show', new_show_path()) %>
+    <% if user_signed_in? %>
+    <% if current_user.role == "admin" || current_user.role == "moderator"%>
+    <div style="text-align:center">
+        <button type="button" class="btn btn-default"><%= link_to('Add a new show', new_show_path()) %></button>
+    </div>
+    <%end%>
+    <%end%>
 </div>
 
 <script>
-  $('#showsTable').DataTable();
+    $('#showsTable').DataTable();
 </script>
