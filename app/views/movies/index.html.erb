@@ -19,7 +19,13 @@
                 <tr>
                     <td><%=link_to(movie.name, movie)%></td>
                     <td><%=movie.pretty_date%></td>
-                    <td><%=movie.rating%></td>
+                    <td>
+                      <div class="scoreBox">
+                        <div class="text-center">
+                          <%= color_score(movie.score) %>
+                        </div>
+                      </div>
+                    </td>
                     <td><%=movie.director%></td>
                     <td><%=movie.duration%></td>
                     <% if user_signed_in? %>

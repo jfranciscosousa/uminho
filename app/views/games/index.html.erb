@@ -19,7 +19,13 @@
                 <tr>
                     <td><%=link_to(game.name, game)%></td>
                     <td><%=game.pretty_date%></td>
-                    <td><%=game.rating%></td>
+                    <td>
+                      <div class="scoreBox">
+                        <div class="text-center">
+                          <%= color_score(game.score) %>
+                        </div>
+                      </div>
+                    </td>
                     <td><%=game.platform%></td>
                     <td><%=game.studio%></td>
                     <% if user_signed_in? %>

@@ -20,7 +20,13 @@
             <tr>
                 <td><%=link_to(show.name,show)%></td>
                 <td><%=show.pretty_date%></td>
-                <td><%=show.rating%></td>
+                <td>
+                  <div class="scoreBox">
+                    <div class="text-center">
+                      <%= color_score(show.score) %>
+                    </div>
+                  </div>
+                </td>
                 <td><%=show.seasons%></td>
                 <td><%=show.duration%></td>
                 <td><%=show.episodes%></td>
