@@ -17,7 +17,7 @@
         <tbody>
             <% for movie in @movies %>
                 <tr>
-                    <td><%=movie.name%></td>
+                    <td><%=link_to(movie.name, movie)%></td>
                     <td><%=movie.pretty_date%></td>
                     <td><%=movie.rating%></td>
                     <td><%=movie.director%></td>
