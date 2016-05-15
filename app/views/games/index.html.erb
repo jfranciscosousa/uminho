@@ -7,49 +7,43 @@
                 <th><%=Game.human_attribute_name(:rating)%></th>
                 <th><%=Game.human_attribute_name(:platform)%></th>
                 <th><%=Game.human_attribute_name(:studio)%></th>
-                <% if user_signed_in? %>
-                  <% if current_user.role == "admin" || current_user.role == "moderator"%>
-                    <th>Actions</th>
-                    <%end%>
+                <% if can? :manage, Game %>
+                <th>Actions</th>
                 <%end%>
             </tr>
         </thead>
         <tbody>
             <% for game in @games %>
-                <tr>
-                    <td><%=link_to(game.name, game)%></td>
-                    <td><%=game.pretty_date%></td>
-                    <td>
-                      <div class="scoreBox">
+            <tr>
+                <td><%=link_to(game.name, game)%></td>
+                <td><%=game.pretty_date%></td>
+                <td>
+                    <div class="scoreBox">
                         <div class="text-center">
-                          <%= color_score(game.score) %>
+                            <%= color_score(game.score) %>
                         </div>
-                      </div>
-                    </td>
-                    <td><%=game.platform%></td>
-                    <td><%=game.studio%></td>
-                    <% if user_signed_in? %>
-                      <% if current_user.role == "admin" || current_user.role == "moderator"%>
-                    <td>
-                        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    </div>
+                </td>
+                <td><%=game.platform%></td>
+                <td><%=game.studio%></td>
+                <% if can? :manage, Game %>
+                <td>
+                    <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_game_path(game), :class => 'btn btn-default btn-xs' %>
-                        <%= link_to t('.destroy', :default => t("helpers.links.destroy")), game_path(game), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
-                    </td>
-                    <%end%>
+                    <%= link_to t('.destroy', :default => t("helpers.links.destroy")), game_path(game), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
+                </td>
                 <%end%>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-        <% if user_signed_in? %>
-        <% if current_user.role == "admin" || current_user.role == "moderator"%>
-        <div style="text-align:center">
-            <button type="button" class="btn btn-default"><%= link_to('Add a new game', new_game_path()) %></button>
-        </div>
-        <%end%>
-        <%end%>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <% if can? :manage, Game %>
+    <div style="text-align:center">
+        <button type="button" class="btn btn-default"><%= link_to('Add a new game', new_game_path()) %></button>
     </div>
+    <%end%>
+</div>
 
-    <script>
-        $('#gamesTable').DataTable();
-    </script>
+<script>
+    $('#gamesTable').DataTable();
+</script>

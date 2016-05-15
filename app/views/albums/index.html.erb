@@ -7,10 +7,8 @@
                 <th><%=Album.human_attribute_name(:rating)%></th>
                 <th><%=Album.human_attribute_name(:duration)%></th>
                 <th><%=Album.human_attribute_name(:artist)%></th>
-                <% if user_signed_in? %>
-                <% if current_user.role == "admin" || current_user.role == "moderator"%>
+                <% if can? :manage, Album %>
                 <th>Actions</th>
-                <%end%>
                 <%end%>
             </tr>
         </thead>
@@ -28,8 +26,7 @@
                 </td>
                 <td><%=album.duration%></td>
                 <td><%=album.artist%></td>
-                <% if user_signed_in?%>
-                <% if current_user.role == "admin" || current_user.role == "moderator"%>
+                <% if can? :manage, Album %>
                 <td>
                     <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_album_path(album), :class => 'btn btn-default btn-xs' %>
@@ -37,18 +34,14 @@
                     %>
                 </td>
                 <%end%>
-                <%end%>
-            </tr>
             <% end %>
         </tbody>
     </table>
 
-    <% if user_signed_in? %>
-    <% if current_user.role == "admin" || current_user.role == "moderator"%>
+    <% if can? :manage, Album %>
     <div style="text-align:center">
         <button type="button" class="btn btn-default"><%= link_to('Add a new album', new_album_path()) %></button>
     </div>
-    <%end%>
     <%end%>
 </div>
 
