@@ -137,6 +137,12 @@ border-radius: 10px 10px 10px 10px;
   width: 40px;
 }
 
+.reviewBox {
+  margin-top:10px;
+  margin-left:5%;
+  margin-right:5%;
+}
+
 
 
 /** Footer **/
