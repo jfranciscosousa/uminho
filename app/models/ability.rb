@@ -13,6 +13,9 @@ class Ability
     elsif user.role == 'admin'
       can :manage, :all
     elsif user.role == 'moderator'
+      can :create, Review
+      can :like, Review
+      can :dislike, Review
       can :manage, Product
       can :manage, Game
       can :manage, Album
