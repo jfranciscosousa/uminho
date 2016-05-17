@@ -1,5 +1,4 @@
 <div class="text-center">
-
     <% if  can? :create, Review %>
     <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
 <% else %>
@@ -22,7 +21,6 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="pull-right">
-
                             <div class="scoreBox">
                                 <div class="text-center">
                                     <%= color_score(review.score) %>
@@ -36,11 +34,17 @@
             <div class="panel-body">
                 <%= review.text%>
                 <div class="Reviews Likes">
-                    <%= link_to_if((can? :create, Review), like_review_path(review), method: :post) do%>
-                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
-                    <%end%>
-                    <%= link_to_if((can? :create, Review), like_review_path(review), method: :post) do%>
-                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
+                    <% if can? :create, Review %>
+                    <span>
+                        <%= link_to like_review_path(review), method: :post do%>
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
+                        <%end%>
+                        <%= link_to like_review_path(review), method: :post do%>
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
+                        <%end%>
+                    </span>
+                    <%else%>
+                    <small><i>Log in to like/dislike reviews!</i></small>
                     <%end%>
                     <div class="Description">
                         <%= review.get_likes.size %>
