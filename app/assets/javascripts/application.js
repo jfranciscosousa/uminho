@@ -18,6 +18,15 @@
 //= require turbolinks
 //= require_tree .
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip()
 })
+
+function addFlashMessage(message, type) {
+    console.log(message);
+    $('#flashMsg').append(
+        "<div class=\"flash alert alert-" + type + " fade in\">" +
+        "<button class=\"close\" data-dismiss=\"alert\">×</button>" +
+        message + "</div>");
+    $('#flashMsg').show();
+}

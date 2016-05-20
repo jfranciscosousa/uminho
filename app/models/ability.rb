@@ -21,6 +21,7 @@ class Ability
       can :manage, Album
       can :manage, Show
       can :manage, Movie
+      can :index, User
     end
   end
 end
