@@ -19,6 +19,8 @@ class Ability
       can :manage, Product
       can :manage, Game
       can :manage, Album
+      can :manage, Show
+      can :manage, Movie
     end
   end
 end
