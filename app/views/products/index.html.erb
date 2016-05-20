@@ -21,6 +21,10 @@
     </table>
 </div>
 
+<% if @products.blank? %>
+    <h4>There are no products containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <script>
   $('#productsTable').DataTable();
 </script>
