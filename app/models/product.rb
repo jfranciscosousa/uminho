@@ -49,4 +49,5 @@ class Product < ActiveRecord::Base
   def pretty_date
     release_date.strftime('%B %-d, %Y')
   end
+
 end
