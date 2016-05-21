@@ -1,19 +1,62 @@
 <div class="center">
-  <h1><%=@user.name%></h1>
-</div>
-<div class="short-hr">
-  <hr />
+    <h1><%=@user.name%></h1><br/>
+    <%= image_tag 'country-4x3/'+@user.country.downcase+'.svg', width: 32 %>
+    <small><%=@user.country_name%></small>
 </div>
 <div class="personal-info-frame">
-<div class="row">
-  <div class="col-sm-4">
-    <strong>Birth date: </strong><%=@user.birth_date%>
-  </div>
-  <div class="col-sm-4">
-    <strong>Gender:</strong> <%= @user.gender %>
-  </div>
-  <div class="col-sm-4">
-    <strong>Country:</strong> <%= @user.country_name %>
-  </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <strong>Birth date:
+            </strong><%=@user.birth_date%>
+        </div>
+        <div class="col-sm-6">
+            <strong>Gender:</strong>
+            <%= @user.gender %>
+        </div>
+    </div>
+    <br/>
+
 </div>
+<div class="short-hr">
+    <hr/>
+</div>
+
+<div class="reviewBox">
+    <div class="panel panel-default" style="padding: 25px">
+        <div style="padding: 10px"></div>
+        <% for review in @reviews %>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p>
+                            <strong><%= get_product_name(review.product_id)  %></strong>
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="pull-right">
+                            <div class="scoreBox">
+                                <div class="text-center">
+                                    <%= color_score(review.score) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <%= review.text%>
+                <div class="Reviews Likes">
+                    <div class="Description">
+                        <%= review.get_likes.size %>
+                        out of
+                        <%= review.votes_for.size %>
+                        users liked this review.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>
