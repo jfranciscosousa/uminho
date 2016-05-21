@@ -45,7 +45,9 @@ class User < ActiveRecord::Base
     !product.in?(self.products)
   end
 
-  def has_role?(*role_names)
-    self.roles.where(:name => role_names).present?
+  def country_name
+    country = ISO3166::Country[self.country]
+    country.translations[I18n.locale.to_s] || country.name
   end
+
 end
