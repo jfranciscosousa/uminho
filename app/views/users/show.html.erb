@@ -1,22 +1,36 @@
-<div class="text-center">
-    <% if  can? :create, Review %>
-    <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
-<% else %>
-    <div title="You must log in to submit reviews!" data-toggle="data-toggle">
-        <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default disabled"%>
-    </div>
-    <% end %>
+<div class="center">
+    <h1><%=@user.name%></h1><br/>
+    <%= image_tag 'country-4x3/'+@user.country.downcase+'.svg', width: 32 %>
+    <small><%=@user.country_name%></small>
 </div>
+<div class="personal-info-frame">
+    <div class="row">
+        <div class="col-sm-6">
+            <strong>Birth date:
+            </strong><%=@user.birth_date%>
+        </div>
+        <div class="col-sm-6">
+            <strong>Gender:</strong>
+            <%= @user.gender %>
+        </div>
+    </div>
+    <br/>
+
+</div>
+<div class="short-hr">
+    <hr/>
+</div>
+
 <div class="reviewBox">
     <div class="panel panel-default" style="padding: 25px">
         <div style="padding: 10px"></div>
-        <% for review in product.reviews %>
+        <% for review in @reviews %>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-sm-8">
                         <p>
-                            <strong><%= link_to review.user.name, review.user %></strong>
+                            <strong><%= review.product.name  %></strong>
                         </p>
                     </div>
                     <div class="col-sm-4">
@@ -34,22 +48,10 @@
             <div class="panel-body">
                 <%= review.text%>
                 <div class="Reviews Likes">
-                    <% if can? :create, Review %>
-                    <span>
-                        <%= link_to like_review_path(review), method: :post do%>
-                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
-                        <%end%>
-                        <%= link_to dislike_review_path(review), method: :post do%>
-                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
-                        <%end%>
-                    </span>
-                    <%else%>
-                    <small><i>Log in to like/dislike reviews!</i></small>
-                    <%end%>
                     <div class="Description">
-                        <%= review.cached_votes_up %>
+                        <%= review.get_likes.size %>
                         out of
-                        <%= review.cached_votes_total %>
+                        <%= review.votes_for.size %>
                         users liked this review.
                     </div>
                 </div>

@@ -3,8 +3,6 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.text :text
       t.integer :score
-      t.integer :likes
-      t.integer :dislikes
       t.integer :user_id
       t.integer :product_id
 
