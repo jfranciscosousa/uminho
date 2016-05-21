@@ -8,6 +8,9 @@ gem 'faker'
 gem 'acts_as_votable'
 #country select form
 gem 'country_select'
+gem 'countries'
+#Country flags
+gem 'svg-flags-rails', '>= 1.0.0-beta'
 #Devise forms with bootstrap
 gem 'devise-bootstrap-views'
 #Annotate ruby model with table atributes (from schema.rb)

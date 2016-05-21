@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
+  get 'users/:id' =>  'users#show', :as => :user
 
   resources :games
   resources :albums
