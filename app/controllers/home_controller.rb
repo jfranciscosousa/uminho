@@ -4,10 +4,8 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      if current_user.role == 'admin'
-        render 'admin-home'
-      elsif current_user.role == 'moderator'
-        render 'admin-home'
+      if current_user.role == 'moderator' || current_user.role == 'admin'
+        render 'moderator-home'
       end
     end
     @games = Product.games.best.map { |p| p.specific }
