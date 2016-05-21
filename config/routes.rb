@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'users/:id' =>  'users#show'
+  get 'users/:id' =>  'users#show', :as => :user
 
 
   root 'home#index'
