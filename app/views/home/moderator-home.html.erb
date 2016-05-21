@@ -1,15 +1,15 @@
-<div class="row">
-    <div class="col-md-6">
-        <ul class="list-group">
-            <li class="list-group-item"><%= link_to "New Movie", new_movie_path %></li>
-            <li class="list-group-item"><%= link_to "New Album", new_album_path %></li>
-            <li class="list-group-item"><%= link_to "New Game", new_game_path %></li>
-            <li class="list-group-item"><%= link_to "New TVShow", new_show_path %></li>
-        </ul>
+<div class="center">
+    <h3>User Roles</h3>
+    <button class="btn btn-default"><%=link_to "Manage roles", users_path%></button>
+    <br/>
+    <div class="short-hr">
+        <hr/>
     </div>
-    <div class="col-md-6">
-        <ul class="list-group">
-            <li class="list-group-item"><%= link_to "List Users", users_path %></li>
-        </ul>
+    <h3>Add Products</h3>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><%=link_to "Albums", new_album_path%></button>
+        <button type="button" class="btn btn-default"><%=link_to "Games", new_game_path%></button>
+        <button type="button" class="btn btn-default"><%=link_to "Shows", new_show_path%></button>
+        <button type="button" class="btn btn-default"><%=link_to "Movies", new_movie_path%></button>
     </div>
 </div>
