@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   # associations
-  has_many :reviews
+  has_many :reviews, -> { order 'reviews.cached_votes_up DESC' }
   has_many :products, through: :reviews
 
   # validations

@@ -39,7 +39,7 @@
                         <%= link_to like_review_path(review), method: :post do%>
                         <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
                         <%end%>
-                        <%= link_to like_review_path(review), method: :post do%>
+                        <%= link_to dislike_review_path(review), method: :post do%>
                         <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
                         <%end%>
                     </span>
@@ -47,9 +47,9 @@
                     <small><i>Log in to like/dislike reviews!</i></small>
                     <%end%>
                     <div class="Description">
-                        <%= review.get_likes.size %>
+                        <%= review.cached_votes_up %>
                         out of
-                        <%= review.votes_for.size %>
+                        <%= review.cached_votes_total %>
                         users liked this review.
                     </div>
                 </div>

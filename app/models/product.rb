@@ -17,7 +17,7 @@
 
 class Product < ActiveRecord::Base
   actable
-  has_many :reviews
+  has_many :reviews, -> { order 'reviews.cached_votes_up DESC' }
 
   scope :games, -> { where(actable_type: 'Game')}
   scope :movies, -> { where(actable_type: 'Movie')}

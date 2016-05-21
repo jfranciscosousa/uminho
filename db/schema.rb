@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504105738) do
+ActiveRecord::Schema.define(version: 20160521153757) do
 
   create_table "albums", force: :cascade do |t|
     t.string "duration"
@@ -51,12 +51,13 @@ ActiveRecord::Schema.define(version: 20160504105738) do
   create_table "reviews", force: :cascade do |t|
     t.text     "text"
     t.integer  "score"
-    t.integer  "likes"
-    t.integer  "dislikes"
     t.integer  "user_id"
     t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
+    t.integer  "cached_votes_total", default: 0
   end
 
   create_table "shows", force: :cascade do |t|
