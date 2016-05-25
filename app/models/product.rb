@@ -28,14 +28,11 @@ class Product < ActiveRecord::Base
   scope :can_review, -> { where('release_date < ?', Date.today) }
   scope :hot, -> { order(importance: :desc) }
 
-  validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,
-                                    message: "not a youtube link" }
+  validates :trailer, format: { with: %r{(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/},
+                                message: 'not a youtube link' }
 
-  validates :avatar, format: { with: /https?:\/\/(\w+\.)?imgur.com\//,
-                                message: "not a imgur link" }
-
-
-
+  validates :avatar, format: { with: %r{https?:\/\/(\w+\.)?imgur.com\/},
+                               message: 'not a imgur link' }
 
   def score
     reviews.average(:score).to_f
@@ -50,5 +47,4 @@ class Product < ActiveRecord::Base
   def pretty_date
     release_date.strftime('%B %-d, %Y')
   end
-
 end
