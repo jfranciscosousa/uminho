@@ -25,6 +25,7 @@ class Product < ActiveRecord::Base
   scope :albums, -> { where(actable_type: 'Album')}
   scope :best, -> { order(score: :desc)}
   scope :coming_soon, -> { where('release_date > ?', Date.today).order(:release_date).limit(10) }
+  scope :can_review, -> { where('release_date < ?', Date.today) }
   scope :hot, -> { order(importance: :desc) }
 
   validates :trailer, format: { with: /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\//,

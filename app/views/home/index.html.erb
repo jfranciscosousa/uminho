@@ -31,12 +31,12 @@
           </div>
         </div>
         <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
-          <% for g in @coming_soon %>
+          <% for c in @coming_soon %>
                 <div class="col-md-2">
                     <br />
-                    <img class="img-responsive" src="<%=g.avatar%>" alt="Icon">
+                    <img class="img-responsive" src="<%=c.avatar%>" alt="Icon">
                     <br />
-                    <strong><%= g.name%></strong>
+                    <strong><%= link_to(c.name,c) %></strong>
                 </div>
               </li>
           <% end%>
