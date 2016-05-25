@@ -21,9 +21,9 @@ class Review < ActiveRecord::Base
   validate :product_must_be_released
 
   def product_must_be_released
-      if product.release_date > Time.zone.today
-          errors.add(:product, "must be released before it can be reviewed!")
-      end
+    if product.release_date > Time.zone.today
+      errors.add(:product, 'must be released before it can be reviewed!')
+    end
   end
 
   def update_product_score

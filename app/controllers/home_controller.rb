@@ -12,6 +12,6 @@ class HomeController < ApplicationController
     @shows = Product.shows.best.map(&:specific)
     @albums = Product.albums.best.map(&:specific)
     @top5 = Product.hot.limit(5)
-    @coming_soon = Product.coming_soon.limit(5).map { |p| p.specific }
+    @coming_soon = Product.coming_soon.limit(5).map(&:specific)
   end
 end
