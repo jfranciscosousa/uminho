@@ -34,7 +34,7 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       if @album.save
-        format.html {flash[:notice]='Album was successfully created.' and redirect_to action: "index" }
+        format.html { flash[:notice] = 'Album was successfully created.' and redirect_to action: 'index' }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -44,10 +44,9 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    puts album_params['release_date']
     respond_to do |format|
       if @album.update(album_params)
-        format.html {flash[:notice]='Album was successfully updated.' and redirect_to action: "index"}
+        format.html { flash[:notice] = 'Album was successfully updated.' and redirect_to action: 'index' }
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
@@ -59,7 +58,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { flash[:notice]='Album was successfully deleted.' and redirect_to action: "index"}
+      format.html { flash[:notice] = 'Album was successfully deleted.' and redirect_to action: 'index' }
       format.json { head :no_content }
     end
   end
@@ -71,18 +70,8 @@ class AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:name,
-                                 :description,
-                                 :release_date,
-                                 :trailer,
-                                 :avatar,
-                                 :rating,
-                                 :importance,
-                                 :duration,
-                                 :artist,
-                                 :producer,
-                                 :studio,
-                                 :features)
+    params.require(:album).permit(:name, :description, :release_date, :trailer,
+                                  :avatar, :rating, :importance, :duration,
+                                  :artist, :producer, :studio, :features)
   end
-
 end

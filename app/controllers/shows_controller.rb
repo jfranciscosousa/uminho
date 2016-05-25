@@ -20,21 +20,20 @@ class ShowsController < ApplicationController
     @show = Show.new(show_params)
 
     respond_to do |format|
-        if @show.save
-           format.html {flash[:notice]='Show was successfully created.' and redirect_to action: "index" }
-           format.json { render :show, status: :created, location: @show }
-        else
-           format.html { render :new }
-           format.json { render json: @show.errors, status: :unprocessable_entity }
-        end
-     end
+      if @show.save
+        format.html { flash[:notice] = 'Show was successfully created.' and redirect_to action: 'index' }
+        format.json { render :show, status: :created, location: @show }
+      else
+        format.html { render :new }
+        format.json { render json: @show.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    puts show_params['release_date']
     respond_to do |format|
       if @show.update(show_params)
-        format.html {flash[:notice]='Show was successfully updated.' and redirect_to action: "index"}
+        format.html { flash[:notice] = 'Show was successfully updated.' and redirect_to action: 'index' }
         format.json { render :show, status: :ok, location: @show }
       else
         format.html { render :edit }
@@ -46,7 +45,7 @@ class ShowsController < ApplicationController
   def destroy
     @show.destroy
     respond_to do |format|
-      format.html { flash[:notice]='Show was successfully deleted.' and redirect_to action: "index"}
+      format.html { flash[:notice] = 'Show was successfully deleted.' and redirect_to action: 'index' }
       format.json { head :no_content }
     end
   end

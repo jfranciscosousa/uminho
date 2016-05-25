@@ -1,38 +1,40 @@
 source 'https://rubygems.org'
 
-#pretty tables
+# verificar rotas não usadas e ações dos controlers inuteis
+gem 'traceroute'
+# pretty tables
 gem 'jquery-datatables-rails'
-#generate random data!
+# generate random data!
 gem 'faker'
-#let models be voted/downvoted
+# let models be voted/downvoted
 gem 'acts_as_votable'
-#country select form
+# country select form
 gem 'country_select'
 gem 'countries'
-#Country flags
+# Country flags
 gem 'svg-flags-rails', '>= 1.0.0-beta'
-#Devise forms with bootstrap
+# Devise forms with bootstrap
 gem 'devise-bootstrap-views'
-#Annotate ruby model with table atributes (from schema.rb)
+# Annotate ruby model with table atributes (from schema.rb)
 gem 'annotate'
-#Implement multi table inheritance
+# Implement multi table inheritance
 gem 'active_record-acts_as'
-#Make the whole website beautiful!
+# Make the whole website beautiful!
 gem 'twitter-bootstrap-rails'
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-#Make form creation very very easy!!
+gem 'therubyracer'
+gem 'less-rails' # Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+# Make form creation very very easy!!
 gem 'simple_form'
-#Authentication gem, provide methods to register, login and logout users
+# Authentication gem, provide methods to register, login and logout users
 gem 'devise'
-#Authorization gem, define what each kind of user can do
+# Authorization gem, define what each kind of user can do
 gem 'cancancan', '~> 1.10'
-gem "font-awesome-rails"
-#Improve error treatment
+gem 'font-awesome-rails'
+# Improve error treatment
 group :development do
-  gem "better_errors"
+  gem 'better_errors'
 end
-gem "binding_of_caller"
+gem 'binding_of_caller'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 group :development do
