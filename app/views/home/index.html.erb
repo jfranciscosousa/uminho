@@ -23,6 +23,27 @@
     </div>
 </div>
 <div class="row">
+      <div class="panel panel-black">
+        <div class="panel-heading">
+          <div class="category-title">
+            <h3 class="panel-title">
+              Coming Soon</h3>
+          </div>
+        </div>
+        <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+          <% for g in @coming_soon %>
+                <div class="col-md-2">
+                    <br />
+                    <img class="img-responsive" src="<%=g.avatar%>" alt="Icon">
+                    <br />
+                    <strong><%= g.name%></strong>
+                </div>
+              </li>
+          <% end%>
+        </ul>
+      </div>
+</div>
+<div class="row">
     <div class="col-md-6">
         <%= render 'topgames' %>
     </div>
