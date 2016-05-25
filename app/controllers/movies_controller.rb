@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       if @movie.save
-        format.html {flash[:notice]='Movie was successfully created.' and redirect_to action: "index" }
+        format.html { flash[:notice] = 'Movie was successfully created.' and redirect_to action: 'index' }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new }
@@ -44,10 +44,9 @@ class MoviesController < ApplicationController
   end
 
   def update
-    puts movie_params['release_date']
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html {flash[:notice]='Movie was successfully updated.' and redirect_to action: "index"}
+        format.html { flash[:notice] = 'Movie was successfully updated.' and redirect_to action: 'index' }
         format.json { render :show, status: :ok, location: @movie }
       else
         format.html { render :edit }
@@ -59,7 +58,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie.destroy
     respond_to do |format|
-      format.html { flash[:notice]='Movie was successfully deleted.' and redirect_to action: "index"}
+      format.html { flash[:notice] = 'Movie was successfully deleted.' and redirect_to action: 'index' }
       format.json { head :no_content }
     end
   end
@@ -71,16 +70,8 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:name,
-                                 :description,
-                                 :trailer,
-                                 :avatar,
-                                 :release_date,
-                                 :rating,
-                                 :importance,
-                                 :cast,
-                                 :director,
-                                 :duration,
-                                 :studio)
+    params.require(:movie).permit(:name, :description, :trailer, :avatar,
+                                  :release_date, :rating, :importance, :cast,
+                                  :director, :duration, :studio)
   end
 end
