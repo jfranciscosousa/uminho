@@ -1,5 +1,10 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @search = params[:search]
+    if @search
+      @products = Product.where("name like ?", "%#{@search}%")
+	  else
+		  @products = Product.all
+	  end
   end
 end
