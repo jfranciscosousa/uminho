@@ -17,7 +17,9 @@
 
 class Product < ActiveRecord::Base
   actable
+
   has_many :reviews, -> { order 'reviews.cached_votes_up DESC' }
+  has_many :users, through: :reviews
 
   scope :games, -> { where(actable_type: 'Game') }
   scope :movies, -> { where(actable_type: 'Movie') }
@@ -46,5 +48,16 @@ class Product < ActiveRecord::Base
 
   def pretty_date
     release_date.strftime('%B %-d, %Y')
+  end
+  def age_hash_count
+   ages = {"0-10" => [0,10],"10-20"=>[10,20],"20-40"=>[20,40],"40-60"=>[40,60],"60-100"=>[60,100]}
+   hash = {}
+   ages.each do |desc, age|
+     hash[desc] = users.where("birth_date BETWEEN ? AND ?", age[1].years.ago, age[0].years.ago).count
+   end
+   hash
+  end
+  def gender_distribution
+    {"Male" => users.male.count, "Female" => users.female.count, "Other" => users.other.count}
   end
 end

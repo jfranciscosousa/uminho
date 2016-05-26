@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 gem 'traceroute'
 # pretty tables
 gem 'jquery-datatables-rails'
-# generate random data!
+#Create Graphs
+gem 'chartkick'
+#generate random data!
 gem 'faker'
 # let models be voted/downvoted
 gem 'acts_as_votable'

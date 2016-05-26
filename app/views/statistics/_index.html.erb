@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="item-details">
+        <div class="row">
+
+            <% $avarage_age = 0 %>
+            <% $reviewer_age = 0  %>           
+
+            <% for review in product.reviews %>
+                    <% $reviewer_age = Date.today.year - review.user.birth_date.year %>
+                    <% $avarage_age = $avarage_age + $reviewer_age %>
+            <%end%>
+            <% $avarage_age = $avarage_age / product.reviews.count %>
+
+
+            <div class="col-sm-4">
+                <strong>Number of Reviews:</strong>
+                <%= product.reviews.count %>
+            </div>
+        </div> 
+        <div class="row"> 
+            <div class="col-sm-4">
+                <strong>Avarage Reviewer's Age:
+                </strong>
+                <%= $avarage_age%>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-8">
+                <strong>Age distribution:
+                </strong>
+                <p>
+                <%=column_chart product.age_hash_count %>
+                
+            </div>
+            <div class="col-sm-4">
+                <strong>Gender distribution:
+                </strong>
+                <%=pie_chart product.gender_distribution %>
+                
+            </div>
+        </div>
+    </div>
+</div>
