@@ -1,3 +1,8 @@
+<% if @products.blank? %>
+<h4>There are no products containing the term
+    <%= params[:search] %>.
+</h4>
+<% else %>
 <div class="table-responsive">
     <table id="productsTable" class="table table-bordered">
         <thead>
@@ -10,17 +15,24 @@
         </thead>
         <tbody>
             <% for product in @products %>
-                <tr>
-                    <td><%=product.name%></td>
-                    <td><%=product.score%></td>
+            <tr>
+                <td><%= link_to(product.name,product.specific)%></td>
+                <td>
+                    <div class="scoreBox">
+                        <div class="text-center">
+                            <%= color_score(product.score) %>
+                        </div>
+                    </div>
                     <td><%=product.pretty_date%></td>
-                    <td><%=product.actable_type%></td>
-                </tr>
-            <% end %>
+                </td>
+                <td><%=product.actable_type%></td>
+                <% end %>
+            </tr>
         </tbody>
     </table>
 </div>
 
 <script>
-  $('#productsTable').DataTable();
+    $('#productsTable').DataTable();
 </script>
+<% end %>

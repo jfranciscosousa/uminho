@@ -30,21 +30,20 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     respond_to do |format|
-        if @game.save
-           format.html {flash[:notice]='Game was successfully created.' and redirect_to action: "index" }
-           format.json { render :show, status: :created, location: @game }
-        else
-           format.html { render :new }
-           format.json { render json: @game.errors, status: :unprocessable_entity }
-        end
-     end
+      if @game.save
+        format.html { flash[:notice] = 'Game was successfully created.' and redirect_to action: 'index' }
+        format.json { render :show, status: :created, location: @game }
+      else
+        format.html { render :new }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    puts game_params['release_date']
     respond_to do |format|
       if @game.update(game_params)
-        format.html {flash[:notice]='Game was successfully updated.' and redirect_to action: "index"}
+        format.html { flash[:notice] = 'Game was successfully updated.' and redirect_to action: 'index' }
         format.json { render :show, status: :ok, location: @game }
       else
         format.html { render :edit }
@@ -56,7 +55,7 @@ class GamesController < ApplicationController
   def destroy
     @game.destroy
     respond_to do |format|
-      format.html { flash[:notice]='Game was successfully deleted.' and redirect_to action: "index"}
+      format.html { flash[:notice] = 'Game was successfully deleted.' and redirect_to action: 'index' }
       format.json { head :no_content }
     end
   end
@@ -68,14 +67,8 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name,
-                                 :description,
-                                 :trailer,
-                                 :avatar,
-                                 :release_date,
-                                 :rating,
-                                 :importance,
-                                 :platform,
+    params.require(:game).permit(:name, :description, :trailer, :avatar,
+                                 :release_date, :rating, :importance, :platform,
                                  :studio)
   end
 end

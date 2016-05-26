@@ -15,8 +15,8 @@
 
 class ReviewsController < ApplicationController
   load_and_authorize_resource
-  before_filter :set_product, only: [:index, :new, :create]
-  before_filter :set_review, only: [:like, :dislike]
+  before_action :set_product, only: [:index, :new, :create]
+  before_action :set_review, only: [:like, :dislike]
 
   def index
     @reviews = @product.reviews
@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
         end
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { render :new}
+        format.html { render :new }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end

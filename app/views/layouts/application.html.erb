@@ -9,23 +9,22 @@
         <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     </head>
     <body>
-      <div id="wrapper">
-        <%= render 'shared/navbar' %>
-        <div class="padding">
-        </div>
-        <div class="maincontent">
-            <% flash.each do |type, message| %>
-                <div class="flash alert <%= bootstrap_class_for(type) %> fade in">
-                    <button class="close" data-dismiss="alert">×</button>
-                    <%= message %>
+        <div id="wrapper">
+            <%= render 'shared/navbar' %>
+            <div class="padding"></div>
+            <div class="maincontent">
+                <div id="flashMsg">
+                    <% flash.each do |type, message| %>
+                    <div class="flash alert <%= bootstrap_class_for(type) %> fade in">
+                        <button class="close" data-dismiss="alert">×</button>
+                        <%= message %>
+                    </div>
+                    <% end %>
                 </div>
-            <% end %>
-            <%= yield %>
+                <%= yield %>
+            </div>
+            <div class="padding"></div>
+            <%= render 'shared/footer' %>
         </div>
-        <div class="padding">
-
-        </div>
-        <%= render 'shared/footer' %>
-      </div>
     </body>
 </html>

@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   # associations
-  has_many :reviews
+  has_many :reviews, -> { order 'reviews.cached_votes_up DESC' }
   has_many :products, through: :reviews
 
   # validations
@@ -42,10 +42,11 @@ class User < ActiveRecord::Base
   end
 
   def can_review?(product)
-    !product.in?(self.products)
+    !product.in?(products)
   end
 
-  def has_role?(*role_names)
-    self.roles.where(:name => role_names).present?
+  def country_name
+    country = ISO3166::Country[self.country]
+    country.translations[I18n.locale.to_s] || country.name
   end
 end
