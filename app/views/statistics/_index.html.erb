@@ -3,21 +3,20 @@
         <div class="row">
 
             <% $avarage_age = 0 %>
-            <% $reviewer_age = 0  %>           
+            <% $reviewer_age = 0  %>
 
             <% for review in product.reviews %>
-                    <% $reviewer_age = Date.today.year - review.user.birth_date.year %>
-                    <% $avarage_age = $avarage_age + $reviewer_age %>
+            <% $reviewer_age = Date.today.year - review.user.birth_date.year %>
+            <% $avarage_age = $avarage_age + $reviewer_age %>
             <%end%>
             <% $avarage_age = $avarage_age / product.reviews.count %>
-
 
             <div class="col-sm-4">
                 <strong>Number of Reviews:</strong>
                 <%= product.reviews.count %>
             </div>
-        </div> 
-        <div class="row"> 
+        </div>
+        <div class="row">
             <div class="col-sm-4">
                 <strong>Avarage Reviewer's Age:
                 </strong>
@@ -25,20 +24,47 @@
             </div>
         </div>
         <br/>
+        <hr>
         <div class="row">
             <div class="col-sm-8">
                 <strong>Age distribution:
                 </strong>
-                <p>
                 <%=column_chart product.age_hash_count %>
-                
+
             </div>
             <div class="col-sm-4">
                 <strong>Gender distribution:
                 </strong>
                 <%=pie_chart product.gender_distribution %>
-                
+
             </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-8">
+                <strong>Average score by age:
+                </strong>
+                <%=column_chart product.age_hash_average %>
+
+            </div>
+            <div class="col-sm-4">
+                <strong>Average score by gender:
+                </strong>
+                <%=pie_chart product.gender_distribution_score %>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+          <br/>
+            <strong>Number of reviews by country:
+            </strong>
+            <%= geo_chart product.reviews.joins(:user).group(:country).count %>
+        </div>
+        <hr>
+        <div class="row">
+            <strong>Score average by country:
+            </strong>
+            <%= geo_chart product.reviews.joins(:user).group(:country).average(:score) %>
         </div>
     </div>
 </div>

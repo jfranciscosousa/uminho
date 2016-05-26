@@ -49,15 +49,33 @@ class Product < ActiveRecord::Base
   def pretty_date
     release_date.strftime('%B %-d, %Y')
   end
+
   def age_hash_count
-   ages = {"0-10" => [0,10],"10-20"=>[10,20],"20-40"=>[20,40],"40-60"=>[40,60],"60-100"=>[60,100]}
-   hash = {}
-   ages.each do |desc, age|
-     hash[desc] = users.where("birth_date BETWEEN ? AND ?", age[1].years.ago, age[0].years.ago).count
-   end
-   hash
+    ages = { '0-10' => [0, 10], '10-20' => [10, 20], '20-40' => [20, 40], '40-60' => [40, 60], '60-100' => [60, 100] }
+    hash = {}
+    ages.each do |desc, age|
+      hash[desc] = users.where('birth_date BETWEEN ? AND ?', age[1].years.ago, age[0].years.ago).count
+    end
+    hash
   end
+
+  def age_hash_average
+    ages = { '0-10' => [0, 10], '10-20' => [10, 20], '20-40' => [20, 40], '40-60' => [40, 60], '60-100' => [60, 100] }
+    hash = {}
+    ages.each do |desc, age|
+      hash[desc] = users.where('birth_date BETWEEN ? AND ?', age[1].years.ago, age[0].years.ago).average(:score)
+    end
+    hash
+  end
+
   def gender_distribution
-    {"Male" => users.male.count, "Female" => users.female.count, "Other" => users.other.count}
+    { 'Male' => users.male.count, 'Female' => users.female.count, 'Other' => users.other.count }
+  end
+
+  def gender_distribution_score
+    male_score = reviews.includes(:user).where('users.gender = ?', 'Male').references(:users).average(:score)
+    female_score = reviews.includes(:user).where('users.gender = ?', 'Female').references(:users).average(:score)
+    other_score = reviews.includes(:user).where('users.gender = ?', 'Other').references(:users).average(:score)
+    { 'Male' => male_score, 'Female' => female_score, 'Other' => other_score }
   end
 end
