@@ -3,54 +3,40 @@
         <div class="row">
 
             <% $avarage_age = 0 %>
-            <% $reviewer_age = 0 %>
-            <% $male_c = 0 %>
-            <% $female_c = 0 %>
-            <% $other_c = 0 %>
-            <% $age_14 = 0 %> 
+            <% $reviewer_age = 0  %>           
 
             <% for review in product.reviews %>
                     <% $reviewer_age = Date.today.year - review.user.birth_date.year %>
                     <% $avarage_age = $avarage_age + $reviewer_age %>
-
-                    <% if review.user.gender == "Male" %>
-                        <% $male_c += 1 %>
-                    <% elsif review.user.gender == "Female" %>
-                        <% $female_c += 1 %>
-                    <%else $other_c += 1 %>
-
-                    <%end%>
             <%end%>
             <% $avarage_age = $avarage_age / product.reviews.count %>
 
 
-            <div class=<% $avarage_age = $avarage_age / product.reviews.count %>"col-sm-4">
+            <div class="col-sm-4">
                 <strong>Number of Reviews:</strong>
                 <%= product.reviews.count %>
             </div>
+        </div> 
+        <div class="row"> 
             <div class="col-sm-4">
                 <strong>Avarage Reviewer's Age:
                 </strong>
                 <%= $avarage_age%>
             </div>
-            <div class="col-sm-4">
-                <strong>Reviewers Gender:
-                </strong>
-                <p>Male : <%= $male_c %>
-                <p>Female : <%= $female_c %>
-                <p>Not Specified <%= $other_c %>
-            </div>
         </div>
         <br/>
         <div class="row">
             <div class="col-sm-8">
-                <strong>Guests:
+                <strong>Age distribution:
                 </strong>
+                <p>
+                <%=column_chart product.age_hash_count %>
                 
             </div>
             <div class="col-sm-4">
-                <strong>Duration:
+                <strong>Gender distribution:
                 </strong>
+                <%=pie_chart product.gender_distribution %>
                 
             </div>
         </div>

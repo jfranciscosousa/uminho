@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 #pretty tables
 gem 'jquery-datatables-rails'
+#Create Graphs
+gem 'chartkick'
+#Group by date
+gem 'groupdate'
 #generate random data!
 gem 'faker'
 #let models be voted/downvoted

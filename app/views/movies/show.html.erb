@@ -20,6 +20,8 @@
 <label for="tab2">Reviews</label>
 <input id="tab3" type="radio" name="tabs">
 <label for="tab3">Media</label>
+<input id="tab4" type="radio" name="tabs">
+<label for="tab4">Statistics</label>
 <section id="content1">
     <div class="item-rating"></div>
     <div class="item-description">
@@ -63,4 +65,7 @@
             <iframe class="embed-responsive-item" src="<%=@movie.trailer%>"></iframe>
         </div>
     </div>
+</section>
+<section id="content4">
+    <%= render 'statistics/index' , product: @movie.acting_as %>
 </section>
