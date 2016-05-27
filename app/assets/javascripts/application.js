@@ -30,3 +30,35 @@ function addFlashMessage(message, type) {
         message + "</div>");
     $('#flashMsg').show();
 }
+
+function addTabID(url, id) {
+  if (url.indexOf("#") >= 0){
+    var pos = url.indexOf("#");
+    var res = url.replace(url.substr(pos,url.length-pos), id);
+    console.log("REPLACING");
+    console.log(res);
+    return res;
+  }
+  var res = url.concat(id);
+  return res;
+}
+
+
+function showTab(option) {
+  var tab;
+  switch (option) {
+    case "summary":
+      tab = "tab1";
+      break;
+    case "reviews":
+      tab = "tab2";
+      break;
+    case "media":
+      tab = "tab3";
+      break;
+    case "stats":
+      tab = "tab4";
+      break;
+  }
+	$('#' + tab).click();
+}
