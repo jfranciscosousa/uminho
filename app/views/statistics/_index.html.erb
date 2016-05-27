@@ -58,13 +58,13 @@
           <br/>
             <strong>Number of reviews by country:
             </strong>
-            <%= geo_chart product.reviews.select('reviews.*').joins(:user).group(:country,"reviews.id").count %>
+            <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).count %>
         </div>
         <hr>
         <div class="row">
             <strong>Score average by country:
             </strong>
-            <%= geo_chart product.reviews.select('reviews.*').joins(:user).group(:country,"reviews.id").average(:score) %>
+            <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).average(:score) %>
         </div>
     </div>
 </div>
