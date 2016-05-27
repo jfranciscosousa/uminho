@@ -77,7 +77,8 @@ $(document).ready(function(){
       window.location.href = window.location.href.concat("#summary");
   	else {
       option = url.match(/#(.*)/)[1];
-      showTab(option);
+      var tab = getTab(option);
+      $('#' + tab).click();
     }
 
     $("#tab1").click(function(){
@@ -100,26 +101,4 @@ $(document).ready(function(){
       window.location.href = newURLString;
     });
 });
-
-function showTab(option) {
-  var tab;
-  switch (option) {
-    case "summary":
-      tab = "tab1";
-      break;
-    case "reviews":
-      tab = "tab2";
-      break;
-    case "media":
-      tab = "tab3";
-      break;
-    case "stats":
-      tab = "tab4";
-      break;
-  }
-	$('#' + tab).click();
-}
-</script>
-
-
 </script>

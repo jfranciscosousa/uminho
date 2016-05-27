@@ -43,22 +43,16 @@ function addTabID(url, id) {
   return res;
 }
 
-
-function showTab(option) {
-  var tab;
+function getTab(option) {
   switch (option) {
     case "summary":
-      tab = "tab1";
-      break;
+      return "tab1";
     case "reviews":
-      tab = "tab2";
-      break;
+      return "tab2";
     case "media":
-      tab = "tab3";
-      break;
+      return "tab3";
     case "stats":
-      tab = "tab4";
-      break;
+      return "tab4";
   }
-	$('#' + tab).click();
+
 }
