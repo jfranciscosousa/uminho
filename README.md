@@ -25,3 +25,5 @@ Traceroute was also used to ensure that all routes had a controller action and v
 ## Extras
 
 We also used the ERD gem, that generates a diagram based on our ActiveRecord models.
+
+![alt tag](https://raw.githubusercontent.com/zeesousa/critique/master/erd.png)
