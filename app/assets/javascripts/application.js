@@ -30,3 +30,29 @@ function addFlashMessage(message, type) {
         message + "</div>");
     $('#flashMsg').show();
 }
+
+function addTabID(url, id) {
+  if (url.indexOf("#") >= 0){
+    var pos = url.indexOf("#");
+    var res = url.replace(url.substr(pos,url.length-pos), id);
+    console.log("REPLACING");
+    console.log(res);
+    return res;
+  }
+  var res = url.concat(id);
+  return res;
+}
+
+function getTab(option) {
+  switch (option) {
+    case "summary":
+      return "tab1";
+    case "reviews":
+      return "tab2";
+    case "media":
+      return "tab3";
+    case "stats":
+      return "tab4";
+  }
+
+}

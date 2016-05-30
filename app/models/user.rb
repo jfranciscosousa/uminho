@@ -19,6 +19,9 @@
 
 class User < ActiveRecord::Base
   acts_as_voter
+  scope :user, -> { where(role: 'user') }
+  scope :admin, -> { where(role: 'admin') }
+  scope :moderator, -> { where(role: 'moderator') }
   scope :male, -> { where(gender: 'Male') }
   scope :female, -> { where(gender: 'Female') }
   scope :other, -> { where(gender: 'Other') }

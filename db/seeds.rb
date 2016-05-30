@@ -1,5 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#default admin
+User.create(email: "admin@critique.com", password:12345678, gender: "Male", role: "admin")
+#default moderator
+User.create(email: "moderator@critique.com", password:12345678, gender: "Male", role: "moderator")
 
 ##### Albums
 
@@ -23,11 +25,11 @@ Album.create!(name: 'Violence Begets Violence', description:"Violence Begets Vio
 
 Album.create!(name: 'The Wall', description: "The Wall is the eleventh studio album by the English rock band Pink Floyd. It is the last studio album released with the classic line-up of guitarist David Gilmour, bass guitarist/lyricist Roger Waters, keyboardist Richard Wright, and drummer Nick Mason before Wright left the band. Originally released as a double album on 30 November 1979, it was supported by a tour with elaborate theatrical effects, and adapted into a 1982 feature film, Pink Floyd – The Wall. The album features the band's only single to be number one on various charts, \"Another Brick in the Wall, Part 2\".",
               release_date: Date.new(1979,11,30), duration:"80m54s", artist:'Pink Floyd', producer: "Bob Ezrin, David Gilmour, James Guthrie, Roger Waters",
-              studio: "Britannia Row, Super Bear Studio, Studio Miraval (France), CBS 30th Street Studio (New York), Producers Workshop (Los Angeles)", features:"", trailer: "https://www.youtube.com/watch?v=_FrOQC-zEog", avatar: "http://i.imgur.com/teussw8.jpg")
+              studio: "Britannia Row, Super Bear Studio, Studio Miraval (France), CBS 30th Street Studio (New York), Producers Workshop (Los Angeles)", features:"", trailer: "https://www.youtube.com/embed/FrOQC-zEog", avatar: "http://i.imgur.com/teussw8.jpg")
 
 Album.create!(name: 'California', description: "California is the upcoming seventh studio album by the American rock band Blink-182, set for release on July 1, 2016 through BMG.",
               release_date: Date.new(2016,7,1), duration:"42m36s", artist:'Blink-182', producer: "John Feldmann",
-              studio: "Foxy Studios", features:"", trailer: "https://www.youtube.com/watch?v=8yGipyel-3I", avatar: "http://i.imgur.com/2Itu1bs.jpg")
+              studio: "Foxy Studios", features:"", trailer: "https://www.youtube.com/embed/8yGipyel-3I", avatar: "http://i.imgur.com/2Itu1bs.jpg")
 
 
 ##### games
@@ -45,10 +47,10 @@ Game.create!(name:"Fifa 16", description:"FIFA 16 is an association football sim
       release_date: Date.new(2015,9,24), platform: "PS4, Xbox One", studio:"EA Sports", trailer:"https://www.youtube.com/embed/bwz98athxQ8", avatar:"http://i.imgur.com/Jqj3LuL.jpg")
 
 Game.create!(name:"Pes 2016", description:"Pro Evolution Soccer 2016 (abbreviated to PES 2016, known as Winning Eleven 2016 in Japan) is a football simulation game developed by PES Productions and published by Konami for Microsoft Windows, PlayStation 3, PlayStation 4, Xbox 360, and Xbox One.",
-             release_date: Date.new(2015,9,15), platform: "PS4, Xbox One", studio:"Konami", trailer:"https://www.youtube.com/watch?v=3UfOW9x0oeA", avatar:"http://i.imgur.com/nfZyGO3.jpg")
+             release_date: Date.new(2015,9,15), platform: "PS4, Xbox One", studio:"Konami", trailer:"https://www.youtube.com/embed/3UfOW9x0oeA", avatar:"http://i.imgur.com/nfZyGO3.jpg")
 
 Game.create!(name:"LEGO Star Wars: The Force Awakens", description:"The LEGO video game franchise triumphantly returns with a fun-filled, humorous journey based on the blockbuster Star Wars film.",
-             release_date: Date.new(2016,6,28), platform: "PS4, Xbox One", studio:"Warner Bros. Interactive", trailer:"https://www.youtube.com/watch?v=i0IJqIzO_YM", avatar:"http://i.imgur.com/HRD3Gqw.jpg")
+             release_date: Date.new(2016,6,28), platform: "PS4, Xbox One", studio:"Warner Bros. Interactive", trailer:"https://www.youtube.com/embed/i0IJqIzO_YM", avatar:"http://i.imgur.com/HRD3Gqw.jpg")
 
 
 
@@ -73,11 +75,11 @@ Movie.create!(name:"The Little Mermaid", description:"A mermaid princess makes a
 
 Movie.create!(name:"Her", description:"Her is a 2013 American romantic science fiction comedy-drama film written, directed, and produced by Spike Jonze. It marks Jonze's solo screenwriting debut. The film follows Theodore Twombly (Joaquin Phoenix), a man who develops a relationship with Samantha (Scarlett Johansson), an intelligent computer operating system personified through a female voice.",
               release_date: Date.new(2013,10,13), cast:"Joaquin Phoenix, Amy Adams, Rooney Mara, Olivia Wilde, Scarlett Johansson",
-              director: "Spike Jonze", studio:"Warner Bros. Pictures", duration:"2h06min", trailer:"https://www.youtube.com/watch?v=WzV6mXIOVl4", avatar:"http://i.imgur.com/JVbc4ik.jpg")
+              director: "Spike Jonze", studio:"Warner Bros. Pictures", duration:"2h06min", trailer:"https://www.youtube.com/embed/WzV6mXIOVl4", avatar:"http://i.imgur.com/JVbc4ik.jpg")
 
 Movie.create!(name:"Dunkirk", description:"The film tells the story of the Dunkirk evacuation, which took place at the beginning of World War II.",
               release_date: Date.new(2017,7,19), cast:"Tom Hardy, Cillian Murphy, Kenneth Branagh",
-              director: "Christopher Nolan", studio:"Warner Bros", duration:"", trailer:"https://www.youtube.com/watch?v=kes93ngu4lY", avatar:"http://i.imgur.com/5gJPfML.jpg")
+              director: "Christopher Nolan", studio:"Warner Bros", duration:"", trailer:"https://www.youtube.com/embed/kes93ngu4lY", avatar:"http://i.imgur.com/5gJPfML.jpg")
 
 
 
@@ -101,8 +103,8 @@ Show.create!(name:"Fargo", description:"Various chronicles of deception, intrigu
 
 Show.create!(name:"Narcos", description:"Set and filmed in Colombia, season 1 tells the story of notorious drug kingpin Pablo Escobar, who became a billionaire through the production and distribution of cocaine, while also focusing on Escobar's interactions with drug lords, DEA agents, and various opposition entities.",
              release_date: Date.new(2015, 8, 28), cast:"Wagner Moura, Boyd Holbrook, Pedro Pascal",
-             seasons: 1, duration: "50m", episodes: 10, trailer:"https://www.youtube.com/watch?v=U7elNhHwgBU", avatar:"http://i.imgur.com/9x6ZeJp.jpg")
+             seasons: 1, duration: "50m", episodes: 10, trailer:"https://www.youtube.com/embed/U7elNhHwgBU", avatar:"http://i.imgur.com/9x6ZeJp.jpg")
 
 Show.create!(name:"Westworld", description:"A series inspired by the 1973 film of the same title written by Michael Crichton about a futuristic theme park populated by artificial beings.",
              release_date: Date.new(2015, 10, 2), cast:"Ben Barnes, Ingrid Bolsø Berdal, Clifton Collins Jr.",
-             seasons: 0, duration: "60m", episodes: 0, trailer:"https://www.youtube.com/watch?v=OM8HNuRLIBI", avatar:"http://i.imgur.com/d4OldEH.jpg")
+             seasons: 0, duration: "60m", episodes: 0, trailer:"https://www.youtube.com/embed/OM8HNuRLIBI", avatar:"http://i.imgur.com/d4OldEH.jpg")

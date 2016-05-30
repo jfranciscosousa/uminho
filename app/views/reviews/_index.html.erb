@@ -1,3 +1,4 @@
+<%if !(product.release_date > Time.zone.today) %>
 <div class="text-center">
     <% if  can? :create, Review %>
     <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
@@ -44,7 +45,9 @@
                         <%end%>
                     </span>
                     <%else%>
-                    <small><i>Log in to like/dislike reviews!</i></small>
+                    <small>
+                        <i>Log in to like/dislike reviews!</i>
+                    </small>
                     <%end%>
                     <div class="Description">
                         <%= review.cached_votes_up %>
@@ -58,3 +61,8 @@
         <% end %>
     </div>
 </div>
+<%else%>
+<h3>
+    This product has not been released yet!
+</h3>
+<%end%>
