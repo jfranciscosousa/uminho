@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#generate erd diagrams
+gem 'erd'
 # verificar rotas não usadas e ações dos controlers inuteis
 gem 'traceroute'
 # pretty tables
