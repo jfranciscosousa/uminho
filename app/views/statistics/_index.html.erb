@@ -1,3 +1,4 @@
+<%if product.reviews.size > 0 %>
 <div class="row">
     <div class="item-details">
         <div class="row">
@@ -55,7 +56,7 @@
         </div>
         <hr>
         <div class="row">
-          <br/>
+            <br/>
             <strong>Number of reviews by country:
             </strong>
             <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).count %>
@@ -68,3 +69,8 @@
         </div>
     </div>
 </div>
+<%else%>
+<h3>
+    This product contains no reviews!
+</h3>
+<%end%>
