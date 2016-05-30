@@ -3,7 +3,7 @@
 # Table name: albums
 #
 #  id       :integer          not null, primary key
-#  duration :integer
+#  duration :string
 #  artist   :string
 #  producer :string
 #  studio   :string

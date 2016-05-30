@@ -5,7 +5,7 @@
 #  id       :integer          not null, primary key
 #  cast     :text
 #  seasons  :integer
-#  duration :integer
+#  duration :string
 #  episodes :integer
 #
 

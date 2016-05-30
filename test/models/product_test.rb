@@ -13,6 +13,8 @@
 #  actable_type :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  trailer      :string
+#  avatar       :string
 #
 
 require 'test_helper'
