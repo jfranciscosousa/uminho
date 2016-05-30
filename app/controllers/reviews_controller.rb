@@ -47,12 +47,26 @@ class ReviewsController < ApplicationController
 
   def like
     @review.liked_by current_user
-    redirect_to request.referer
+    respond_to do |format|
+      format.html { redirect_to request.referer }
+      format.json do
+        render json: {
+          success: true
+        }.to_json
+      end
+    end
   end
 
   def dislike
     @review.disliked_by current_user
-    redirect_to request.referer
+    respond_to do |format|
+      format.html { redirect_to request.referer }
+      format.json do
+        render json: {
+          success: true
+        }.to_json
+      end
+    end
   end
 
   private
