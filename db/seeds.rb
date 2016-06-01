@@ -1,7 +1,7 @@
 # default admin
-User.create!(name: 'ADMIN', email: 'admin@critique.com', password: 12_345_678, gender: 'Male', role: 'admin' , birth_date: Date.new(1994, 1, 1))
+User.create!(name: 'ADMIN', email: 'admin@critique.com', password: 12_345_678, gender: 'Male', role: 'admin' , birth_date: Date.new(1994, 1, 1), country: 'PT')
 # default moderator
-User.create!(name: 'MODERATOR 1', email: 'moderator@critique.com', password: 12_345_678, gender: 'Male', role: 'moderator', birth_date: Date.new(1994, 1, 1))
+User.create!(name: 'MODERATOR 1', email: 'moderator@critique.com', password: 12_345_678, gender: 'Male', role: 'moderator', birth_date: Date.new(1994, 1, 1), country: 'PT')
 
 ##### Albums
 
