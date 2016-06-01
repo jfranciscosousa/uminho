@@ -23,7 +23,7 @@ function promoteUserAction() {
         },
         error: function(data) {
           console.log(data)
-            addFlashMessage(data.message, 'error');
+            addFlashMessage(data.message, 'danger');
             $('#myModal').modal('hide');
         }
     });

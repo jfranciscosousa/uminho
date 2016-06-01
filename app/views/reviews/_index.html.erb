@@ -37,12 +37,8 @@
                 <div class="Reviews Likes">
                     <% if can? :create, Review %>
                     <span>
-                        <%= link_to like_review_path(review), method: :post do%>
-                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like
-                        <%end%>
-                        <%= link_to dislike_review_path(review), method: :post do%>
-                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike
-                        <%end%>
+                        <a class="Button" onclick="like(<%=review.id%>)"><i class="fa fa-thumbs-up" aria-hidden="true"></i>Like</a>
+                        <a class="Button" onclick="dislike(<%=review.id%>)"><i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike</a>
                     </span>
                     <%else%>
                     <small>
@@ -50,10 +46,10 @@
                     </small>
                     <%end%>
                     <div class="Description">
-                        <%= review.cached_votes_up %>
-                        out of
-                        <%= review.cached_votes_total %>
-                        users liked this review.
+                        <span style="display:none;" id="votedUP<%=review.id%>"><%=current_user.voted_up_on? review%></span>
+                        <span style="display:none;" id="votedDOWN<%=review.id%>"><%=current_user.voted_down_on? review%></span>
+                        <span id="votesUP<%=review.id%>"><%= review.cached_votes_up %></span> likes and
+                        <span id="votesDOWN<%=review.id%>"><%= review.cached_votes_down %></span> dislikes
                     </div>
                 </div>
             </div>
