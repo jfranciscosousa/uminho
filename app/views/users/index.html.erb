@@ -16,7 +16,7 @@
         <tbody>
             <% for user in @users %>
             <tr>
-                <td><%=user.name%></td>
+                <td><%= link_to user.name, user %></td>
                 <td><%=user.email%></td>
                 <td><%=user.birth_date%></td>
                 <td><%=user.gender%></td>
