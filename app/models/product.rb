@@ -32,6 +32,8 @@ class Product < ActiveRecord::Base
   scope :can_review, -> { where('release_date < ?', Time.zone.today) }
   scope :hot, -> { order(importance: :desc) }
 
+  validates :importance, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 1000 }
+
   validates :trailer, format: { with: %r{(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/},
                                 message: 'not a youtube link' }
 
@@ -40,6 +42,10 @@ class Product < ActiveRecord::Base
 
   def score
     reviews.average(:score).to_f
+  end
+
+  before_validation do
+    self.importance ||= 0
   end
 
   before_save do
