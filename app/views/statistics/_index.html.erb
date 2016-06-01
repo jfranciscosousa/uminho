@@ -3,14 +3,14 @@
     <div class="item-details">
         <div class="row">
 
-            <% $avarage_age = 0 %>
+            <% $average_age = 0 %>
             <% $reviewer_age = 0  %>
 
             <% for review in product.reviews %>
             <% $reviewer_age = Date.today.year - review.user.birth_date.year %>
-            <% $avarage_age = $avarage_age + $reviewer_age %>
+            <% $average_age = $average_age + $reviewer_age %>
             <%end%>
-            <% $avarage_age = $avarage_age / product.reviews.count %>
+            <% $average_age = $average_age / product.reviews.count %>
 
             <div class="col-sm-4">
                 <strong>Number of Reviews:</strong>
@@ -19,9 +19,9 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <strong>Avarage Reviewer's Age:
+                <strong>Average Reviewer's Age:
                 </strong>
-                <%= $avarage_age%>
+                <%= $average_age%>
             </div>
         </div>
         <br/>
