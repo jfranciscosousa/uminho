@@ -1,6 +1,6 @@
 <div class="carousel">
     <div class="text-center">
-        <h3>Hot Right now!!!!!</h3>
+        <h2>Hot Content</h2>
     </div>
     <div class="gallery items-5">
         <div id="item-1" class="control-operator"></div>
@@ -10,7 +10,7 @@
         <div id="item-5" class="control-operator"></div>
         <% for product in @top5 %>
             <figure class="item" style="background-image: url(<%= product.avatar %>); background-size: 100% 100%;">
-                <h1 style="color: white;"><%=product.name%></h1>
+                <h1 style="color: white;"><%=link_to(product.name, product)%></h1>
             </figure>
         <% end %>
         <div class="controls">
