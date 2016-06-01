@@ -27,13 +27,13 @@
         <br/>
         <hr>
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <strong>Age distribution:
                 </strong>
                 <%=column_chart product.age_hash_count %>
 
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <strong>Gender distribution:
                 </strong>
                 <%=pie_chart product.gender_distribution %>
@@ -42,29 +42,31 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <strong>Average score by age:
                 </strong>
                 <%=column_chart product.age_hash_average %>
 
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <strong>Average score by gender:
                 </strong>
                 <%=pie_chart product.gender_distribution_score %>
             </div>
         </div>
         <hr>
-        <div class="row">
+        <div class="row text-center">
             <br/>
             <strong>Number of reviews by country:
             </strong>
+            <br><br/>
             <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).count %>
         </div>
         <hr>
-        <div class="row">
+        <div class="row text-center">
             <strong>Score average by country:
             </strong>
+            <br><br/>
             <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).average(:score) %>
         </div>
     </div>
