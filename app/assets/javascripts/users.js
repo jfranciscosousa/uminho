@@ -16,12 +16,14 @@ function promoteUserAction() {
             role: role.toLowerCase()
         },
         success: function(data) {
+            console.log(data)
             addFlashMessage(data.message, 'success');
             $("#role" + _id).text(role);
             $('#myModal').modal('hide');
         },
         error: function(data) {
-            addFlashMessage(data.message, 'error');
+          console.log(data)
+            addFlashMessage(data.message, 'danger');
             $('#myModal').modal('hide');
         }
     });

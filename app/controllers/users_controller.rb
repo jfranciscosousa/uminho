@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def promote
     @user.role = params[:role]
     respond_to do |format|
-      if user.save
+      if @user.save
         msg = { success: true, message: "Changed user's role successfuly!" }
         format.json { render json: msg }
       else
@@ -26,6 +26,5 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    redirect_to signin_path unless project.hidden
   end
 end
