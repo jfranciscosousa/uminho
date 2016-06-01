@@ -13,8 +13,8 @@ namespace :test_data do
         User.create(
           name: name,
           email: Faker::Internet.free_email(name),
-          password: 12_345_678,
-          password_confirmation: 12_345_678,
+          password: '12345678',
+          password_confirmation: '12345678',
           gender: genders[rand(0..1)],
           birth_date: Faker::Date.between(50.years.ago, 18.years.ago),
           country: Faker::Address.country_code
