@@ -1,14 +1,43 @@
+<div class="center">
+    <h2>Review</h2>
+</div>
+
 <% if can? :create, Review %>
+<div class="form-margins">
+    <hr/>
+
     <%= simple_form_for([@product,@review], class: 'form-horizontal' )  do |f| %>
-        <%= render 'shared/errors', object: f.object %>
-        <%= f.input :score %>
-        <%= f.input :text %>
+    <%= render 'shared/errors', object: f.object %>
+    <div class="panel panel-default black-border">
+            <div class="panel-heading">
+                <div style="margin-left: 35%;">
+
+
+                      <div style="float:left; margin-top: 2%">
+                      <strong>Score</strong>
+                    </div>
+
+                    <div style="margin-left: 13%; width: 65px">
+
+
+                    <%=f.input :score,  label: false%>
+                    </div>
+                    </div>
+
+                </div>
+        <div class="panel-body">
+            <%= f.input :text, placeholder: "Write your review here...", input_html: { style: 'min-height:150px' }%>
+        </div>
+    </div>
+    <div class="center">
         <%= f.button :submit %>
+    </div>
     <% end %>
+</div>
 <% else %>
-    <%= simple_form_for([@product,@review], class: 'form-horizontal' )  do |f| %>
-        <%= f.input :score, disabled: true %>
-        <%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
-        <%= f.button :submit, disabled: true %>
-    <% end %>
+<%= simple_form_for([@product,@review], class: 'form-horizontal' )  do |f| %>
+<%= f.input :score, disabled: true %>
+<%= f.input :text, placeholder: 'Login to post reviews!', disabled: true%>
+<%= f.button :submit, disabled: true %>
+<% end %>
 <% end %>

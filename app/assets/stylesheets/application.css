@@ -228,3 +228,22 @@ border-radius: 10px 10px 10px 10px;
 		line-height: 1.8;
 	}
 }
+
+a.caroussel-title {
+  color: white;
+}
+
+
+.form-margins {
+  margin-left:15%;
+  margin-right:15%;
+}
+
+.black-border {
+  border-color: black;
+}
+
+.score-label {
+  float: right;
+  margin-top:5%;
+}
