@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-#generate erd diagrams
+# generate erd diagrams
 gem 'erd'
 # verificar rotas não usadas e ações dos controlers inuteis
 gem 'traceroute'
 # pretty tables
 gem 'jquery-datatables-rails'
-#Create Graphs
+# Create Graphs
 gem 'chartkick'
-#generate random data!
+# generate random data!
 gem 'faker'
 # let models be voted/downvoted
 gem 'acts_as_votable'
@@ -41,6 +41,7 @@ end
 gem 'binding_of_caller'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -50,6 +51,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

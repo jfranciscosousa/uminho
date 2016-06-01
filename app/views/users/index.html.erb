@@ -24,7 +24,7 @@
                 <td id="role<%=user.id%>"><%=user.role.capitalize%></td>
                 <% if can? :manage, User %>
                 <td>
-                    <button class="btn btn-xs btn-primary" onclick='promoteUserModal(<%=user.id%>)'>Promote</button>
+                    <button class="btn btn-xs btn-primary" onclick='promoteUserModal(<%=user.id%>)'>Change Role</button>
                 </td>
                 <%end%>
             </tr>
