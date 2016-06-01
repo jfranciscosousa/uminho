@@ -15,7 +15,6 @@
  *= require_self
  *= bootstrap_and_overrides
  *= require font-awesome
- *= require nouislider
  */
 
  /* Main structure */
