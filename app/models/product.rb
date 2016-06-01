@@ -86,4 +86,31 @@ class Product < ActiveRecord::Base
     other_score = reviews.includes(:user).where('users.gender = ?', 'Other').references(:users).average(:score)
     { 'Male' => male_score, 'Female' => female_score, 'Other' => other_score }
   end
+
+  def geo_distribution
+    res_final = {}
+    res = reviews.reorder('').joins(:user).group(:country).count
+    res.each do |country, count|
+      country = convert_country(country)
+      res_final[country] = count
+    end
+    res_final
+  end
+
+  def geo_distribution_score
+    res_final = {}
+    res = reviews.reorder('').joins(:user).group(:country).average(:score)
+    res.each do |country, count|
+      country = convert_country(country)
+      res_final[country] = count
+    end
+    res_final
+  end
+
+  private
+
+  def convert_country(country)
+    country = ISO3166::Country[country]
+    country.translations[I18n.locale.to_s] || country.name
+  end
 end

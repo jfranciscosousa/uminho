@@ -60,14 +60,14 @@
             <strong>Number of reviews by country:
             </strong>
             <br><br/>
-            <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).count %>
+            <%= geo_chart product.geo_distribution %>
         </div>
         <hr>
         <div class="row text-center">
             <strong>Score average by country:
             </strong>
             <br><br/>
-            <%= geo_chart product.reviews.reorder('').joins(:user).group(:country).average(:score) %>
+            <%= geo_chart product.geo_distribution_score %>
         </div>
     </div>
 </div>

@@ -20,7 +20,7 @@
                 <td><%=user.email%></td>
                 <td><%=user.birth_date%></td>
                 <td><%=user.gender%></td>
-                <td><%=user.country%></td>
+                <td><%=user.country_name%></td>
                 <td id="role<%=user.id%>"><%=user.role.capitalize%></td>
                 <% if can? :manage, User %>
                 <td>
