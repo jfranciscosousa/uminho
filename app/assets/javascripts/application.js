@@ -24,7 +24,7 @@ $(function() {
 
 function addFlashMessage(message, type) {
     console.log(message);
-    $('#flashMsg').append(
+    $('#flashMsg').html(
         "<div class=\"flash alert alert-" + type + " fade in\">" +
         "<button class=\"close\" data-dismiss=\"alert\">×</button>" +
         message + "</div>");
