@@ -228,3 +228,7 @@ border-radius: 10px 10px 10px 10px;
 		line-height: 1.8;
 	}
 }
+
+a.caroussel-title {
+  color: white;
+}
