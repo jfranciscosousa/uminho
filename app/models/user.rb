@@ -36,9 +36,9 @@ class User < ActiveRecord::Base
   # validations
   validates :gender, inclusion: { in: %w(Male Female Other), message: 'is invalid!' }
   validates :role, inclusion: { in: %w(admin moderator user), message: 'is invalid!' }
-  validates :name, :presence => true
-  validates :country, :presence => true
-  validates :birth_date, :presence => true
+  validates :name, presence: true
+  validates :country, presence: true
+  validates :birth_date, presence: true
 
   # default values
   before_validation :default_values
