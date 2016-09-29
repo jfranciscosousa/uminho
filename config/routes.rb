@@ -18,4 +18,15 @@ Rails.application.routes.draw do
 
   post 'reviews/:id/like' => 'reviews#like', as: 'like_review'
   post 'reviews/:id/dislike' => 'reviews#dislike', as: 'dislike_review'
+
+  namespace :api, defaults: { format: 'json' } do
+    resources :games, except: [:new]
+    resources :albums, except: [:new]
+    resources :movies, except: [:new]
+    resources :shows, except: [:new]
+    resources :products, only: [:index] do
+      resources :reviews, only: [:index, :create]
+    end
+    resources :users, only: [:show]
+  end
 end

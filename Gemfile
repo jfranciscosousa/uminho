@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'active_model_serializers', '0.9.3'
 # generate erd diagrams
 gem 'erd'
 # verificar rotas não usadas e ações dos controlers inuteis
