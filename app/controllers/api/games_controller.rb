@@ -13,12 +13,12 @@ class Api::GamesController < ApiController
 
   def index
     @games = Game.all
-    render :json => @games
+    render json: @games
   end
 
   def show
     @game = Game.find(params[:id])
-    render :json => @game
+    render json: @game
   end
 
   def new

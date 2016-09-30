@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-sm-8">
+        <p>
+          <strong><%= link_to review.user.name, review.user %></strong>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <div class="pull-right">
+          <div class="scoreBox">
+            <div class="text-center">
+              <%= color_score(review.score) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= review.text%>
+    <div class="Reviews Likes">
+      <% if can? :create, Review %>
+      <span>
+        <a class="Button" onclick="like(<%=review.id%>)">
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>Like</a>
+        <a class="Button" onclick="dislike(<%=review.id%>)">
+          <i class="fa fa-thumbs-down" aria-hidden="true"></i>Dislike</a>
+      </span>
+      <%else%>
+      <small>
+        <i>Log in to like/dislike reviews!</i>
+      </small>
+      <%end%>
+      <div class="Description">
+        <% if can? :create, Review %>
+        <span style="display:none;" id="votedUP<%=review.id%>"><%=current_user.voted_up_on? review%></span>
+        <span style="display:none;" id="votedDOWN<%=review.id%>"><%=current_user.voted_down_on? review%></span>
+        <%end%>
+        <span id="votesUP<%=review.id%>"><%= review.cached_votes_up %></span>
+        likes and
+        <span id="votesDOWN<%=review.id%>"><%= review.cached_votes_down %></span>
+        dislikes
+      </div>
+    </div>
+  </div>
+</div>

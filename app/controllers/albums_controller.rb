@@ -10,7 +10,7 @@
 #  features :string
 #
 
-class AlbumsController < ApplicationController
+class AlbumsController < AbstractProductController
   load_and_authorize_resource
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
@@ -19,7 +19,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find(params[:id])
+    @album = @product.specific
   end
 
   def new

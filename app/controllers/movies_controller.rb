@@ -10,7 +10,7 @@
 #  product_id :integer
 #
 
-class MoviesController < ApplicationController
+class MoviesController < AbstractProductController
   load_and_authorize_resource
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 

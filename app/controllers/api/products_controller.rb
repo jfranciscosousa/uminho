@@ -6,6 +6,6 @@ class Api::ProductsController < ApiController
                 else
                   Product.all
                 end
-    render :json => @products
+    render json: @products
   end
 end

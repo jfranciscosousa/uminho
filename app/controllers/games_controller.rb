@@ -7,7 +7,7 @@
 #  studio   :string
 #
 
-class GamesController < ApplicationController
+class GamesController < AbstractProductController
   load_and_authorize_resource
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 

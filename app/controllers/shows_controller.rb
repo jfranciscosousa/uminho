@@ -1,4 +1,4 @@
-class ShowsController < ApplicationController
+class ShowsController < AbstractProductController
   before_action :set_show, only: [:show, :edit, :update, :destroy]
 
   def index

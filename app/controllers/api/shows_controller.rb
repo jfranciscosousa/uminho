@@ -3,12 +3,12 @@ class Api::ShowsController < ApiController
 
   def index
     @shows = Show.all
-    render :json => @shows
+    render json: @shows
   end
 
   def show
     @show = Show.find(params[:id])
-    render :json => @show
+    render json: @show
   end
 
   def new
