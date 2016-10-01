@@ -15,6 +15,7 @@ module ApplicationHelper
   end
 
   def color_score(score)
+    score = 0 if score == nil
     data = if score > 75
              "<div class=\"Score_green\">#{score.round}</div>"
            elsif score > 50

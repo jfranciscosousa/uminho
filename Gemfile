@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# fast json
+gem 'oj'
+gem 'oj_mimic_json'
 # pretty
 gem 'will_paginate-bootstrap'
 # pagination

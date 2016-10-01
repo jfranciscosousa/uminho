@@ -40,10 +40,6 @@ class Product < ActiveRecord::Base
   validates :avatar, format: { with: %r{https?:\/\/(\w+\.)?imgur.com\/},
                                message: 'not a imgur link' }
 
-  def score
-    reviews.average(:score).to_f
-  end
-
   before_validation do
     self.importance ||= 0
   end
