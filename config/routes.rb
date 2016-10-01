@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     resources :albums, except: [:new]
     resources :movies, except: [:new]
     resources :shows, except: [:new]
-    resources :products, only: [:index] do
+    resources :products, only: [:index, :show] do
       resources :reviews, only: [:index, :create]
     end
     resources :users, only: [:show]

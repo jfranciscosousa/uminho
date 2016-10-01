@@ -18,7 +18,7 @@ class Api::ReviewsController < ApiController
   before_action :set_product, only: [:index, :create]
 
   def index
-    @reviews = @product.reviews
+    @reviews = @product.reviews.includes(:user).paginate(page: params[:page], per_page: 10)
     render json: @reviews
   end
 

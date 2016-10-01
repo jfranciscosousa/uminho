@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dalli'
 # fast json
 gem 'oj'
 gem 'oj_mimic_json'
@@ -8,7 +9,7 @@ gem 'will_paginate-bootstrap'
 # pagination
 gem 'will_paginate', '~> 3.1.0'
 # serialize models for rest api
-gem 'active_model_serializers', '0.9.3'
+gem 'active_model_serializers', '~> 0.10.0'
 # generate erd diagrams
 gem 'erd'
 # verificar rotas não usadas e ações dos controlers inuteis
