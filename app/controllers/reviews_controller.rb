@@ -14,72 +14,72 @@
 #
 
 class ReviewsController < ApplicationController
-  load_and_authorize_resource
-  before_action :set_product, only: [:index, :new, :create]
-  before_action :set_review, only: [:like, :dislike]
+    load_and_authorize_resource
+    before_action :set_product, only: [:index, :new, :create]
+    before_action :set_review, only: [:like, :dislike]
 
-  def index
-    @reviews = @product.reviews
-  end
+    def index
+        @reviews = @product.reviews
+    end
 
-  def new
-    @review = Review.new
-  end
+    def new
+        @review = Review.new
+    end
 
-  def create
-    @review = Review.new(review_params)
-    @review.product = @product
-    @review.user = current_user
+    def create
+        @review = Review.new(review_params)
+        @review.product = @product
+        @review.user = current_user
 
-    respond_to do |format|
-      if @review.save
-        format.html do
-          flash[:notice] = 'Review was successfully created.'
-          redirect_to @product.specific
+        respond_to do |format|
+            if @review.save
+                format.html do
+                    flash[:notice] = 'Review was successfully created.'
+                    redirect_to @product.specific
+                end
+                format.json { render :show, status: :created, location: @review }
+            else
+                format.html { render :new }
+                format.json { render json: @review.errors, status: :unprocessable_entity }
+            end
         end
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
     end
-  end
 
-  def like
-    @review.liked_by current_user
-    respond_to do |format|
-      format.html { redirect_to request.referer }
-      format.json do
-        render json: {
-          success: true
-        }.to_json
-      end
+    def like
+        @review.liked_by current_user
+        respond_to do |format|
+            format.html { redirect_to request.referer }
+            format.json do
+                render json: {
+                    success: true
+                }.to_json
+            end
+        end
     end
-  end
 
-  def dislike
-    @review.disliked_by current_user
-    respond_to do |format|
-      format.html { redirect_to request.referer }
-      format.json do
-        render json: {
-          success: true
-        }.to_json
-      end
+    def dislike
+        @review.disliked_by current_user
+        respond_to do |format|
+            format.html { redirect_to request.referer }
+            format.json do
+                render json: {
+                    success: true
+                }.to_json
+            end
+        end
     end
-  end
 
-  private
+    private
 
-  def set_product
-    @product = Product.find(params[:product_id])
-  end
+    def set_product
+        @product = Product.find(params[:product_id])
+    end
 
-  def set_review
-    @review = Review.find(params[:id])
-  end
+    def set_review
+        @review = Review.find(params[:id])
+    end
 
-  def review_params
-    params.require(:review).permit(:text, :score)
-  end
+    def review_params
+        params.require(:review).permit(:text, :score)
+    end
 end

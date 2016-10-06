@@ -10,5 +10,5 @@
 #
 
 class Movie < ActiveRecord::Base
-  acts_as :product
+    acts_as :product
 end

@@ -1,27 +1,27 @@
 <%if !(product.release_date > Time.zone.today) %>
-<div class="text-center">
-  <% if  can? :create, Review %>
-  <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
-<% else %>
-  <div title="You must log in to submit reviews!" data-toggle="data-toggle">
-    <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default disabled"%>
-  </div>
-  <% end %>
-</div>
-<div class="reviewBox">
-  <div class="panel panel-default" style="padding: 25px">
-    <div style="padding: 10px"></div>
     <div class="text-center">
-      <%= will_paginate @reviews, :params => {:anchor => "reviews"}, renderer: BootstrapPagination::Rails%>
+        <% if  can? :create, Review %>
+            <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default" %>
+        <% else %>
+            <div title="You must log in to submit reviews!" data-toggle="data-toggle">
+                <%= link_to "Write Review", new_product_review_path(product), class: "btn btn-default disabled"%>
+            </div>
+        <% end %>
     </div>
-    <%= render @reviews %>
-    <div class="text-center">
-      <%= will_paginate @reviews, :params => {:anchor => "reviews"}, renderer: BootstrapPagination::Rails%>
+    <div class="reviewBox">
+        <div class="panel panel-default" style="padding: 25px">
+            <div style="padding: 10px"></div>
+            <div class="text-center">
+                <%= will_paginate @reviews, :params => {:anchor => "reviews"}, renderer: BootstrapPagination::Rails%>
+            </div>
+            <%= render @reviews %>
+            <div class="text-center">
+                <%= will_paginate @reviews, :params => {:anchor => "reviews"}, renderer: BootstrapPagination::Rails%>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 <%else%>
-<h3>
-  This product has not been released yet!
-</h3>
+    <h3>
+        This product has not been released yet!
+    </h3>
 <%end%>

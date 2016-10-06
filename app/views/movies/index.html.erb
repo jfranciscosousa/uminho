@@ -8,43 +8,42 @@
                 <th><%=Movie.human_attribute_name(:director)%></th>
                 <th><%=Movie.human_attribute_name(:duration)%></th>
                 <% if can? :manage, Movie %>
-                <th>Actions</th>
+                    <th>Actions</th>
                 <%end%>
             </tr>
         </thead>
         <tbody>
             <% for movie in @movies %>
-            <tr>
-                <td><%=link_to(movie.name, movie)%></td>
-                <td><%=movie.pretty_date%></td>
-                <td>
-                    <div class="scoreBox">
-                        <div class="text-center">
-                            <%= color_score(movie.score) %>
+                <tr>
+                    <td><%=link_to(movie.name, movie)%></td>
+                    <td><%=movie.pretty_date%></td>
+                    <td>
+                        <div class="scoreBox">
+                            <div class="text-center">
+                                <%= color_score(movie.score) %>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td><%=movie.director%></td>
-                <td><%=movie.duration%></td>
-                <% if can? :manage, Movie %>
-                <td>
-                    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    </td>
+                    <td><%=movie.director%></td>
+                    <td><%=movie.duration%></td>
+                    <% if can? :manage, Movie %>
+                        <td>
+                            <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_movie_path(movie), :class => 'btn btn-default btn-xs' %>
-                    <%= link_to t('.destroy', :default => t("helpers.links.destroy")), movie_path(movie), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+                            <%= link_to t('.destroy', :default => t("helpers.links.destroy")), movie_path(movie), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
                     %>
-                </td>
-                <%end%>
-            </tr>
+                        </td>
+                    <%end%>
+                </tr>
             <% end %>
         </tbody>
     </table>
     <% if can? :manage, Movie %>
-    <div style="text-align:center">
-        <button type="button" class="btn btn-default"><%= link_to('Add a new movie', new_movie_path()) %></button>
-    </div>
+        <div style="text-align:center">
+            <button type="button" class="btn btn-default"><%= link_to('Add a new movie', new_movie_path()) %></button>
+        </div>
     <%end%>
 </div>
-
 <script>
     $('#moviesTable').DataTable();
 </script>

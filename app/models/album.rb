@@ -11,5 +11,5 @@
 #
 
 class Album < ActiveRecord::Base
-  acts_as :product
+    acts_as :product
 end

@@ -1,5 +1,6 @@
 <div class="center">
-    <h1><%=@user.name%></h1><br/>
+    <h1><%=@user.name%></h1>
+    <br/>
     <%= image_tag 'country-4x3/'+@user.country.downcase+'.svg', width: 32 %>
     <small><%=@user.country_name%></small>
 </div>
@@ -15,48 +16,46 @@
         </div>
     </div>
     <br/>
-
 </div>
 <div class="short-hr">
     <hr/>
 </div>
-
 <div class="reviewBox">
     <div class="panel panel-default" style="padding: 25px">
         <div style="padding: 10px"></div>
         <% for review in @reviews %>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <p>
-                            <strong><%= link_to review.product.name, review.product.specific %></strong>
-                        </p>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="pull-right">
-                            <div class="scoreBox">
-                                <div class="text-center">
-                                    <%= color_score(review.score) %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>
+                                <strong><%= link_to review.product.name, review.product.specific %></strong>
+                            </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="pull-right">
+                                <div class="scoreBox">
+                                    <div class="text-center">
+                                        <%= color_score(review.score) %>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="clearfix"></div>
                 </div>
-            </div>
-            <div class="panel-body">
-                <%= review.text%>
-                <div class="Reviews Likes">
-                    <div class="Description">
-                        <%= review.get_likes.size %>
-                        out of
+                <div class="panel-body">
+                    <%= review.text%>
+                    <div class="Reviews Likes">
+                        <div class="Description">
+                            <%= review.get_likes.size %>
+                            out of
                         <%= review.votes_for.size %>
-                        users liked this review.
+                            users liked this review.
+                    </div>
                     </div>
                 </div>
             </div>
-        </div>
         <% end %>
     </div>
 </div>

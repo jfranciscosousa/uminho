@@ -1,6 +1,9 @@
 Style/Encoding:
   Enabled: false
 
+Style/IndentationWidth:
+  Width: 4
+
 Style/AndOr:
   Enabled: false
 

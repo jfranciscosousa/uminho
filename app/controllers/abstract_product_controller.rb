@@ -1,10 +1,10 @@
 class AbstractProductController < ApplicationController
-  before_action :set_product, only: [:show]
+    before_action :set_product, only: [:show]
 
-  private
+    private
 
-  def set_product
-    @product = Product.find(params[:id])
-    @reviews = @product.reviews.paginate(page: params[:page], per_page: 10)
-  end
+    def set_product
+        @product = Product.find(params[:id])
+        @reviews = @product.reviews.paginate(page: params[:page], per_page: 10)
+    end
 end

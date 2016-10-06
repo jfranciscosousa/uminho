@@ -11,7 +11,6 @@
         <% for product in @top5 %>
             <figure class="item" style="background-image: url(<%= product.avatar %>); background-size: 100% 100%;">
                 <h1 style="color: white;"><%=link_to(product.name, product.specific, :class => "caroussel-title")%></h1>
-
             </figure>
         <% end %>
         <div class="controls">
@@ -24,25 +23,25 @@
     </div>
 </div>
 <div class="row">
-      <div class="panel panel-black">
+    <div class="panel panel-black">
         <div class="panel-heading">
-          <div class="category-title">
-            <h3 class="panel-title">
-              Coming Soon</h3>
-          </div>
+            <div class="category-title">
+                <h3 class="panel-title">
+                    Coming Soon</h3>
+            </div>
         </div>
         <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
-          <% for c in @coming_soon %>
+            <% for c in @coming_soon %>
                 <div class="col-md-2">
                     <br />
                     <img class="img-responsive" src="<%=c.avatar%>" alt="Icon">
                     <br />
                     <strong><%= link_to(c.name,c) %></strong>
                 </div>
-              </li>
-          <% end%>
-        </ul>
-      </div>
+            </li>
+        <% end%>
+    </ul>
+</div>
 </div>
 <div class="row">
     <div class="col-md-6">

@@ -1,38 +1,37 @@
 <% if @products.blank? %>
-<h4>There are no products containing the term
+    <h4>There are no products containing the term
     <%= params[:search] %>.
-</h4>
+    </h4>
 <% else %>
-<div class="table-responsive">
-    <table id="productsTable" class="table table-bordered">
-        <thead>
-            <tr>
-                <th><%=Product.human_attribute_name(:name)%></th>
-                <th><%=Product.human_attribute_name(:score)%></th>
-                <th><%=Product.human_attribute_name(:release_date)%></th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for product in @products %>
-            <tr>
-                <td><%= link_to(product.name,product.specific)%></td>
-                <td>
-                    <div class="scoreBox">
-                        <div class="text-center">
-                            <%= color_score(product.score) %>
-                        </div>
-                    </div>
-                    <td><%=product.pretty_date%></td>
-                </td>
-                <td><%=product.actable_type%></td>
-                <% end %>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<script>
-    $('#productsTable').DataTable();
-</script>
+    <div class="table-responsive">
+        <table id="productsTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th><%=Product.human_attribute_name(:name)%></th>
+                    <th><%=Product.human_attribute_name(:score)%></th>
+                    <th><%=Product.human_attribute_name(:release_date)%></th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for product in @products %>
+                    <tr>
+                        <td><%= link_to(product.name,product.specific)%></td>
+                        <td>
+                            <div class="scoreBox">
+                                <div class="text-center">
+                                    <%= color_score(product.score) %>
+                                </div>
+                            </div>
+                            <td><%=product.pretty_date%></td>
+                        </td>
+                        <td><%=product.actable_type%></td>
+                    <% end %>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $('#productsTable').DataTable();
+    </script>
 <% end %>
