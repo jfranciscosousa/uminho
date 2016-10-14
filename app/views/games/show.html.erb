@@ -13,78 +13,94 @@
     </div>
     <strong><%=@game.platform%></strong>
 </div>
-<input id="tab1" type="radio" name="tabs" checked>
-<label for="tab1">Summary</label>
-<input id="tab2" type="radio" name="tabs">
-<label for="tab2">Reviews</label>
-<input id="tab3" type="radio" name="tabs">
-<label for="tab3">Media</label>
-<input id="tab4" type="radio" name="tabs">
-<label for="tab4">Statistics</label>
-<section id="content1">
-    <div class="item-rating"></div>
-    <div class="item-description">
-        <strong>Description:
-        </strong>
-        <%= @game.description %>
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+        <a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">
+            <label for="tab1">Summary</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">
+            <label for="tab2">Reviews</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#media" aria-controls="media" role="tab" data-toggle="tab">
+            <label for="tab3">Media</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#statistics" aria-controls="statistics" role="tab" data-toggle="tab">
+            <label for="tab4">Statistics</label>
+        </a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="summary">
+        <div class="item-rating"></div>
+        <div class="item-description">
+            <strong>Description:
+      </strong>
+            <%= @game.description %>
+        </div>
+        <div class="item-details">
+            <div class="row">
+                <div class="col-sm-8">
+                    <strong>Studio:</strong>
+                    <%= @game.studio %>
+                </div>
+                <div class="col-sm-4">
+                    <strong>Release Date:
+              </strong>
+                    <%= @game.release_date %>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="item-details">
+    <div role="tabpanel" class="tab-pane" id="reviews">
+        <%= render 'reviews/index' , product: @game.acting_as %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="media">
         <div class="row">
-            <div class="col-sm-8">
-                <strong>Studio:</strong>
-                <%= @game.studio %>
-            </div>
-            <div class="col-sm-4">
-                <strong>Release Date:
-                </strong>
-                <%= @game.release_date %>
+            <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="<%=@game.trailer%>"></iframe>
             </div>
         </div>
     </div>
-</section>
-<section id="content2">
-    <%= render 'reviews/index' , product: @game.acting_as %>
-</section>
-<section id="content3">
-    <div class="row">
-        <div class="col-md-12 embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="<%=@game.trailer%>"></iframe>
-        </div>
+    <div role="tabpanel" class="tab-pane" id="statistics">
+        <%= render 'statistics/index' , product: @game.acting_as %>
     </div>
-</section>
-<section id="content4">
-    <%= render 'statistics/index' , product: @game.acting_as %>
-</section>
+</div>
 <script>
     $(document).ready(function(){
-    
-        var url = window.location.href;
-        if (url.indexOf("#")<=0)
-          window.location.href = window.location.href.concat("#summary");
-      	else {
-          option = url.match(/#(.*)/)[1];
-          var tab = getTab(option);
-          $('#' + tab).click();
-        }
-    
-        $("#tab1").click(function(){
-          var newURLString = addTabID(window.location.href, "#summary");
-          window.location.href = newURLString;
-        });
-    
-        $("#tab2").click(function() {
-          var newURLString = addTabID(window.location.href, "#reviews");
-          window.location.href = newURLString;
-        });
-    
-        $("#tab3").click(function() {
-          var newURLString = addTabID(window.location.href, "#media");
-          window.location.href = newURLString;
-        });
-    
-        $("#tab4").click(function() {
-          var newURLString = addTabID(window.location.href, "#stats");
-          window.location.href = newURLString;
-        });
-    });
+
+                                    var url = window.location.href;
+                                    if (url.indexOf("#")<=0)
+                                      window.location.href = window.location.href.concat("#summary");
+                                  	else {
+                                      option = url.match(/#(.*)/)[1];
+                                      var tab = getTab(option);
+                                      $('#' + tab).click();
+                                    }
+
+                                    $("#tab1").click(function(){
+                                      var newURLString = addTabID(window.location.href, "#summary");
+                                      window.location.href = newURLString;
+                                    });
+
+                                    $("#tab2").click(function() {
+                                      var newURLString = addTabID(window.location.href, "#reviews");
+                                      window.location.href = newURLString;
+                                    });
+
+                                    $("#tab3").click(function() {
+                                      var newURLString = addTabID(window.location.href, "#media");
+                                      window.location.href = newURLString;
+                                    });
+
+                                    $("#tab4").click(function() {
+                                      var newURLString = addTabID(window.location.href, "#stats");
+                                      window.location.href = newURLString;
+                                    });
+                                });
 </script>
