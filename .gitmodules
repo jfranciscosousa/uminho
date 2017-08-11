@@ -1,0 +1,12 @@
+[submodule "third-year/PL-TP2"]
+	path = third-year/PL-TP2
+	url = https://github.com/RafaelAnt/PL-TP2
+[submodule "third-year/SRCR-Exercicio3"]
+	path = third-year/SRCR-Exercicio3
+	url = https://github.com/RafaelAnt/PL-TP2
+[submodule "fourth-year/proxyprint-bar"]
+	path = fourth-year/proxyprint-bar
+	url = https://github.com/ProxyPrint/proxyprint-bar
+[submodule "fourth-year/proxyprint-kitchen"]
+	path = fourth-year/proxyprint-kitchen
+	url = https://github.com/ProxyPrint/proxyprint-kitchen

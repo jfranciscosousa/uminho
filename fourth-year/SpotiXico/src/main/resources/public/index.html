@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>SpotiXico</title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.min.js"></script>
+        <script type=text/javascript src ="app/app.js"></script>
+        <script type=text/javascript src ="app/controllers/IndexCtrl.js"></script>
+        <script type=text/javascript src ="app/controllers/TopTracksCtrl.js"></script>
+
+        <style>
+            .Content {
+                padding:10px;
+                width: 600px;
+                height: 50%;
+                background-color: #dedede;
+
+                position:absolute; /*it can be fixed too*/
+                left:0; right:0;
+                top:0; bottom:0;
+                margin:auto;
+
+                /*this to solve "the content will not be cut when the window is smaller than the content": */
+                max-width:100%;
+                max-height:100%;
+                overflow:auto;
+            }
+
+            .fade {
+                transition: 1s linear all;  
+                opacity: 1;
+            }
+
+            .fade.ng-hide {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body ng-app="SpotiXico">
+        <div ng-view></div>
+    </body>
+</html>

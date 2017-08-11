@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Critique</title>
+        <%= favicon_link_tag %>
+        <%= stylesheet_link_tag    'application', media: 'all'%>
+        <%= javascript_include_tag 'application' %>
+        <%= javascript_include_tag "//www.google.com/jsapi" %>
+        <%= stylesheet_link_tag "//cdn.datatables.net/v/bs/jq-2.2.3/dt-1.10.12/datatables.min.css" %>
+        <%= javascript_include_tag "//cdn.datatables.net/v/bs/jq-2.2.3/dt-1.10.12/datatables.min.js" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div id="wrapper">
+            <%= render 'shared/navbar' %>
+            <div class="padding"></div>
+            <div class="maincontent">
+                <div id="flashMsg">
+                    <% flash.each do |type, message| %>
+                        <div class="flash alert <%= bootstrap_class_for(type) %> fade in">
+                            <button class="close" data-dismiss="alert">×</button>
+                            <%= message %>
+                        </div>
+                    <% end %>
+                </div>
+                <%= yield %>
+            </div>
+            <div class="padding"></div>
+            <%= render 'shared/footer' %>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-nav-title>Printshops</ion-nav-title>
+  <ion-content padding="true" class="has-header">
+    <ion-list id="nearestPrintshops-list1" class=" ">
+      <ul class="list">
+        <ion-item class="item item-text-wrap" ng-repeat="printshop in printshops">
+          <div class="block">
+            <a ui-sref="printshop({id: printshop.id})"><h2 style="float: left;">{{printshop.name}}</h2><a>
+            <p style="float: right;">{{printshop.distance}} Km</p>
+            <div style="clear:both"></div>
+          </div>
+          <br/>
+          <p>
+            {{printshop.address}}
+          </p>
+        </ion-item>
+      </ul>
+    </ion-list>
+  </ion-content>
+</ion-view>

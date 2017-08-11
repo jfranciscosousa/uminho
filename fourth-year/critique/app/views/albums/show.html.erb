@@ -1,0 +1,92 @@
+<div class="item-header">
+    <h2><%=@album.name%></h2>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <img class="img-responsive center-block forceimg" src="<%=@album.avatar%>" alt="Album image" width="800">
+        </div>
+    </div>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
+    by
+    <strong><%=@album.artist%></strong>
+</div>
+<ul class="nav nav-tabs" role="tablist" id="productsTabs">
+    <li role="presentation">
+        <a href="#summary" id="tab1" aria-controls="summary" role="tab" data-toggle="tab">
+            <label for="tab1">Summary</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#reviews" id="tab2" aria-controls="reviews" role="tab" data-toggle="tab">
+            <label for="tab2">Reviews</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#media" id="tab3" aria-controls="media" role="tab" data-toggle="tab">
+            <label for="tab3">Media</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#statistics" id="tab4" aria-controls="statistics" role="tab" data-toggle="tab">
+            <label for="tab4">Statistics</label>
+        </a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="summary">
+        <div class="item-rating"></div>
+        <div class="item-description">
+            <strong>Description:
+            </strong>
+            <%= @album.description %>
+        </div>
+        <div class="item-details">
+            <div class="row">
+                <div class="col-sm-4">
+                    <strong>Release date:</strong>
+                    <%= @album.release_date %>
+                </div>
+                <div class="col-sm-4">
+                    <strong>Producer:
+                    </strong>
+                    <%= @album.producer %>
+                </div>
+                <div class="col-sm-4">
+                    <strong>Studio:
+                    </strong>
+                    <%= @album.studio %>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm-8">
+                    <strong>Guests:
+                    </strong>
+                    <%= @album.features %>
+                </div>
+                <div class="col-sm-4">
+                    <strong>Duration:
+                    </strong>
+                    <%= @album.duration %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="reviews">
+        <%= render 'reviews/index' , product: @album.acting_as %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="media">
+        <div class="row">
+            <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="<%=@album.trailer%>"></iframe>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="statistics">
+        <%= render 'statistics/index' , product: @album.acting_as %>
+    </div>
+</div>

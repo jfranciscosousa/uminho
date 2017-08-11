@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjetoLI4</name>
+    </assembly>
+    <members>
+        <member name="F:ProjetoLI4.View.Aprender.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.View.Aprender.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.View.Aprender.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ProjetoLI4.Entrada.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.Entrada.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.Entrada.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.Logic.Aluno.addPoints(System.Int32,System.Int32)">
+            Adiciona pontos a um dos tipos de exercicios, e retorna "true" se o nivel aumentou
+            
+        </member>
+        <member name="M:ProjetoLI4.Logic.Aluno.removePoints(System.Int32,System.Int32)">
+            Remove pontos a um dos tipos de exercicios, e retorna "true" se o nivel desceu
+            
+        </member>
+        <member name="F:ProjetoLI4.View.Estatistica.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.View.Estatistica.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.View.Estatistica.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ProjetoLI4.View.EstatsticasGrid.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.View.EstatsticasGrid.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.View.EstatsticasGrid.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ProjetoLI4.Logic.MenuAprender.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.Logic.MenuAprender.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.Logic.MenuAprender.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ProjetoLI4.Logic.MenuPrincipal.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.Logic.MenuPrincipal.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.Logic.MenuPrincipal.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.Logic.Sessao.getRecord(System.Int32,System.Int32)">
+            <summary>
+            Procura na sessão o Record que tem o nivel e o tipo dados.
+            </summary>
+            <param name="tipo"></param>
+            <param name="nivel"></param>
+            <returns>Record respetivo ou null, se não existir.</returns>
+        </member>
+        <member name="M:ProjetoLI4.Logic.Sessao.racioAcerto(System.Int32)">
+            <summary>
+            Para um tipo de exercício calcula a percentagem de respostas certas. 
+            </summary>
+            <param name="tipo"></param>
+            <returns>Percentagem de respostas certas. </returns>
+        </member>
+        <member name="M:ProjetoLI4.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:ProjetoLI4.View.MenuTreinar.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.View.MenuTreinar.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.View.MenuTreinar.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ProjetoLI4.View.Treinar.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ProjetoLI4.View.Treinar.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ProjetoLI4.View.Treinar.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ProjetoLI4.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ProjetoLI4.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ProjetoLI4.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

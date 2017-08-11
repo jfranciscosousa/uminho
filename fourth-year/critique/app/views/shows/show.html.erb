@@ -1,0 +1,85 @@
+<div class="item-header">
+    <h2><%=@show.name%></h2>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <img class="img-responsive center-block forceimg" src="<%=@show.avatar%>" alt="Show image" width="800">
+        </div>
+    </div>
+    <div class="small-horizontal-bar">
+        <hr/>
+    </div>
+    <strong><%=@show.episodes%>
+        episodes</strong>
+</div>
+<ul class="nav nav-tabs" role="tablist" id="productsTabs">
+    <li role="presentation">
+        <a href="#summary" id="tab1" aria-controls="summary" role="tab" data-toggle="tab">
+            <label for="tab1">Summary</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#reviews" id="tab2" aria-controls="reviews" role="tab" data-toggle="tab">
+            <label for="tab2">Reviews</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#media" id="tab3" aria-controls="media" role="tab" data-toggle="tab">
+            <label for="tab3">Media</label>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#statistics" id="tab4" aria-controls="statistics" role="tab" data-toggle="tab">
+            <label for="tab4">Statistics</label>
+        </a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="summary">
+        <div class="item-rating"></div>
+        <div class="item-description">
+            <strong>Description:
+                </strong>
+            <%= @show.description %>
+        </div>
+        <div class="item-details">
+            <div class="text-center">
+                <strong>Cast:</strong>
+                <%= @show.cast %>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm-4">
+                    <strong>Seasons:
+                        </strong>
+                    <%= @show.seasons %>
+                </div>
+                <div class="col-sm-4">
+                    <strong>Episode duration:
+                        </strong>
+                    <%= @show.duration %>
+                </div>
+                <div class="col-sm-4">
+                    <strong>Release Date:
+                        </strong>
+                    <%= @show.release_date %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="reviews">
+        <%= render 'reviews/index' , product: @show.acting_as %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="media">
+        <div class="row">
+            <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="<%=@show.trailer%>"></iframe>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="statistics">
+        <%= render 'statistics/index' , product: @show.acting_as %>
+    </div>
+</div>
